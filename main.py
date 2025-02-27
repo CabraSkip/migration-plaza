@@ -31,6 +31,7 @@ import generalsettings
 import jobs
 import geoloc
 import items
+import links
 
 CHALLENGES = {
     'plusa': "Basic cGx1c2FAbWlncmF0aW9uLm5sOlByaWNlcjEh",
@@ -327,6 +328,8 @@ def main():
                     infrastructure.migrate_infrastructure(store1, store2, auth_token1, auth_token2, STORE_DATA['domain2'])
                 elif feature == "11":
                     items.migrate_items(store1, store2, auth_token1, auth_token2)
+                elif feature == "12":
+                    links.migrate_links(store1, store2, auth_token1, auth_token2)
 
 if __name__ == "__main__":
     main()
