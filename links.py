@@ -60,7 +60,7 @@ def clean_link_data(link):
     """
     Clean and prepare link data for migration by removing unwanted properties
     """
-    # Remove properties that shouldn't be migrated
+    # Remove properties that shouldn't be migrated !
     if "batteryState" in link:
         del link["batteryState"]
     
