@@ -47,7 +47,7 @@ def upload_items(store, auth_token, items):
         write_log(f"Error uploading items to {store}: {str(e)}", "red")
         return False
 
-def check_request_status(store, auth_token, request_id, max_retries=6, retry_interval=10):
+def check_request_status(store, auth_token, request_id, max_retries=6, retry_interval=15):
     """Check the status of a request with retries for IN_PROGRESS status"""
     retries = 0
     logged_unknown_properties = set()  # Track properties with unknown property errors
@@ -164,6 +164,11 @@ def migrate_items(store1, store2, auth_token1, auth_token2):
         
         # Short pause to avoid overloading the API
         time.sleep(1)
+    
+    # Add an initial wait before checking request statuses
+    if request_ids:
+        write_log(f"Waiting 15 seconds before checking request statuses...", "cyan")
+        time.sleep(15)
     
     # Now check all request IDs for status and errors
     success_count = 0

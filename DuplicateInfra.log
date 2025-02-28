@@ -10646,3 +10646,2155 @@ Stacktrace:
 2025-02-27 00:41:15 - Timeout waiting for IRREADY status
 2025-02-27 00:41:15 - demo.ps : Failed to ready basestation C2803135218150860
 2025-02-27 00:41:15 - Migration failed
+2025-02-28 10:32:42 - Domain plusa : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 10:32:46 - Domain ps : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 10:33:09 - Successfully retrieved store data for domain plusa
+2025-02-28 10:33:12 - Successfully retrieved store data for domain ps
+2025-02-28 10:33:21 - 
+--- Starting links migration from 11111.plusa to demo.ps ---
+2025-02-28 10:33:21 - Fetching links from 11111.plusa...
+2025-02-28 10:33:22 - Fetched batch of 3 links (total so far: 3)
+2025-02-28 10:33:22 - Successfully fetched 3 links from 11111.plusa
+2025-02-28 10:33:22 - Found 3 links to migrate
+2025-02-28 10:33:22 - Cleaning link data for migration...
+2025-02-28 10:34:18 - Domain plusa : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 10:34:22 - Domain ps : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 10:34:46 - Successfully retrieved store data for domain plusa
+2025-02-28 10:34:47 - Successfully retrieved store data for domain ps
+2025-02-28 10:35:32 - 
+--- Starting links migration from 11111.plusa to demo.ps ---
+2025-02-28 10:35:32 - Fetching links from 11111.plusa...
+2025-02-28 10:35:33 - Fetched batch of 3 links (total so far: 3)
+2025-02-28 10:35:33 - Successfully fetched 3 links from 11111.plusa
+2025-02-28 10:35:33 - Found 3 links to migrate
+2025-02-28 10:35:33 - Cleaning link data for migration...
+2025-02-28 10:35:34 - Uploading 3 links to demo.ps...
+2025-02-28 10:35:34 - Uploading 3 links to demo.ps...
+2025-02-28 10:35:34 - Uploading batch 1 (3 links)
+2025-02-28 10:35:35 - Batch upload failed: 202 - {"requestId":4000002}
+2025-02-28 10:35:35 - Retrying batch in 5 seconds (attempt 2/3)...
+2025-02-28 10:35:41 - Batch upload failed: 202 - {"requestId":4000003}
+2025-02-28 10:35:41 - Retrying batch in 5 seconds (attempt 3/3)...
+2025-02-28 10:35:47 - Batch upload failed: 202 - {"requestId":4000004}
+2025-02-28 10:35:47 - Failed to upload batch after 3 attempts
+2025-02-28 10:35:47 - 
+--- Links Migration Failed ---
+2025-02-28 10:40:35 - Domain plusa : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 10:40:38 - Domain ps : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 10:41:03 - Successfully retrieved store data for domain plusa
+2025-02-28 10:41:05 - Successfully retrieved store data for domain ps
+2025-02-28 10:41:10 - 
+--- Starting links migration from 11111.plusa to demo.ps ---
+2025-02-28 10:41:10 - Fetching links from 11111.plusa...
+2025-02-28 10:41:11 - Fetched batch of 3 links (total so far: 3)
+2025-02-28 10:41:11 - Successfully fetched 3 links from 11111.plusa
+2025-02-28 10:41:11 - Found 3 links to migrate
+2025-02-28 10:41:11 - Cleaning link data for migration...
+2025-02-28 10:41:11 - Uploading 3 links to demo.ps...
+2025-02-28 10:41:11 - Uploading 3 links to demo.ps...
+2025-02-28 10:41:11 - Uploading batch 1 (3 links)
+2025-02-28 10:41:11 - Request body preview: [
+  {
+    "barcode": "A4073092152116017",
+    "homeTrx": "A1",
+    "links": [
+      {
+        "barcode": "A4073092152116017",
+        "displayPosition": 0,
+        "itemId": "113948",
+        "linkedItemId": "113948"
+      }
+    ],
+    "modelName": "SmartTAG Color 1.6"
+  },
+  {
+    "barcode": "N4141386433513273",
+    "linkDepartment": "C01",
+    "links": [
+      {
+        "barcode": "N4141386433513273",
+        "displayPosition": 0,
+        "itemId": "166998",
+        "linkedItemId": "166998"
+      }
+    ],
+    "modelName": "SmartTAG Power M Red CHASAL"
+  }
+]
+2025-02-28 10:41:11 - ... and 1 more records
+2025-02-28 10:41:13 - Batch accepted for processing: 202 - {"requestId":4000005}
+2025-02-28 10:41:13 - Checking request status (attempt 1/10), request ID: 4000005
+2025-02-28 10:41:14 - Request status: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "A4073092152116017",
+      "status": "UNKNOWN"
+    },
+    {
+      "barcode": "N4141386433513273",
+      "itemId": "166998",
+      "status": "ERROR_NO_LINK_DEPARTMENTS"
+    },
+    {
+      "barcode": "N4629281375713398",
+      "itemId": "114032",
+      "status": "ERROR_NO_LINK_DEPARTMENTS"
+    }
+  ]
+}
+2025-02-28 10:41:14 - Request 4000005 still processing, waiting 5 seconds...
+2025-02-28 10:41:19 - Checking request status (attempt 2/10), request ID: 4000005
+2025-02-28 10:41:20 - Request status: {
+  "status": "COMPLETED",
+  "results": [
+    {
+      "barcode": "A4073092152116017",
+      "status": "UNKNOWN"
+    },
+    {
+      "barcode": "N4141386433513273",
+      "itemId": "166998",
+      "status": "ERROR_NO_LINK_DEPARTMENTS"
+    },
+    {
+      "barcode": "N4629281375713398",
+      "itemId": "114032",
+      "status": "ERROR_NO_LINK_DEPARTMENTS"
+    }
+  ]
+}
+2025-02-28 10:41:20 - Request 4000005 completed successfully
+2025-02-28 10:41:20 - Batch processing completed successfully with request ID: 4000005
+2025-02-28 10:41:21 - Successfully uploaded 3/3 links to demo.ps
+2025-02-28 10:41:21 - 
+--- Links Migration Summary ---
+2025-02-28 10:41:21 - Total links processed: 3
+2025-02-28 10:41:21 - Successfully migrated: 3
+2025-02-28 10:48:19 - Getting ESL configuration from 11111.plusa
+2025-02-28 10:48:21 - Posting ESL configuration to demo.ps
+2025-02-28 10:48:37 - Templates migration completed successfully
+2025-02-28 10:49:47 - Domain plusa : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 10:49:51 - Domain ps : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 10:50:15 - Successfully retrieved store data for domain plusa
+2025-02-28 10:50:16 - Successfully retrieved store data for domain ps
+2025-02-28 10:54:08 - Domain ps : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 10:54:12 - Domain plusa : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 10:54:36 - Successfully retrieved store data for domain ps
+2025-02-28 10:54:37 - Successfully retrieved store data for domain plusa
+2025-02-28 10:55:00 - Get BS Response: [{"hardwareId": "C2803135184150862", "status": "IRREADY"}, {"hardwareId": "A3803090016151002", "status": "IRREADY"}]
+2025-02-28 10:55:02 - Found graphical.png configuration on demo.ps
+2025-02-28 10:55:03 - Found blueprint.png configuration on demo.ps
+2025-02-28 10:55:03 - Geolocation found, collecting transceiver positions
+2025-02-28 10:55:04 - GET transceiver locations for BS B
+2025-02-28 10:55:04 - Collected position for BS B TRX port 0
+2025-02-28 10:55:04 - Collected position for BS B TRX port 1
+2025-02-28 10:55:05 - GET transceiver locations for BS A
+2025-02-28 10:55:05 - Collected position for BS A TRX port 0
+2025-02-28 10:55:05 - Collected position for BS A TRX port 1
+2025-02-28 10:55:05 - Found secret for basestation C2803135184150862
+2025-02-28 10:55:12 - Add BS C2803135184150862 Status: 200
+2025-02-28 10:55:12 - Found secret for basestation A3803090016151002
+2025-02-28 10:55:15 - Add BS A3803090016151002 Status: 200
+2025-02-28 10:55:15 - All basestation secrets verified and pre-added successfully
+2025-02-28 10:55:16 - Get LinkDepartment Response: [{"alias": "", "id": "A01", "isBackoffice": true, "transceivers": [1]}, {"alias": "", "id": "A02", "isBackoffice": false, "transceivers": [2]}, {"alias": "", "id": "B01", "isBackoffice": false, "transceivers": [1, 2]}]
+2025-02-28 10:55:19 - 11111.plusa : Basestation C deleted - Status: 204
+2025-02-28 10:55:20 - demo.ps : Department A02 deleted - Status: 204
+2025-02-28 10:55:21 - demo.ps : Department B01 deleted - Status: 204
+2025-02-28 10:55:22 - demo.ps : Backoffice department deleted - Status: 204
+2025-02-28 10:55:23 - demo.ps : Basestation B deleted - Status: 204
+2025-02-28 10:55:25 - demo.ps : Basestation A deleted - Status: 204
+2025-02-28 10:55:25 - Starting migration for 2 basestations to 11111.plusa
+2025-02-28 10:55:25 - Processing basestation C2803135184150862
+2025-02-28 10:55:26 - C2803135184150862 status: Not found
+2025-02-28 10:55:44 - C2803135184150862 status: Not found
+2025-02-28 10:56:00 - C2803135184150862 status: Not found
+2025-02-28 10:56:16 - C2803135184150862 status: Not found
+2025-02-28 10:56:32 - C2803135184150862 status: Not found
+2025-02-28 10:56:48 - C2803135184150862 status: Not found
+2025-02-28 10:57:04 - C2803135184150862 status: Not found
+2025-02-28 10:57:20 - C2803135184150862 status: Not found
+2025-02-28 10:57:36 - C2803135184150862 status: Not found
+2025-02-28 10:57:52 - C2803135184150862 status: Not found
+2025-02-28 10:58:09 - 11111.plusa : Basestation C2803135184150862 accepted with zone Main Store
+2025-02-28 10:58:09 - Processing basestation A3803090016151002
+2025-02-28 10:58:11 - 11111.plusa : Basestation A3803090016151002 accepted with zone Main Store
+2025-02-28 10:58:12 - C2803135184150862 status: CONNECTING
+2025-02-28 10:58:28 - C2803135184150862 status: CONNECTING
+2025-02-28 10:58:44 - C2803135184150862 status: CONNECTING
+2025-02-28 10:59:00 - C2803135184150862 status: CONNECTING
+2025-02-28 10:59:16 - 11111.plusa : Basestation C2803135184150862 ready
+2025-02-28 10:59:17 - A3803090016151002 status: BOOTING
+2025-02-28 10:59:33 - A3803090016151002 status: BOOTING
+2025-02-28 10:59:49 - A3803090016151002 status: APPLICATION
+2025-02-28 11:00:05 - 11111.plusa : Basestation A3803090016151002 ready
+2025-02-28 11:00:05 - 11111.plusa : All basestations migrated successfully
+2025-02-28 11:00:06 - Created department A01 - Status: 201
+2025-02-28 11:00:08 - Created department A02 - Status: 201
+2025-02-28 11:00:09 - Created department B01 - Status: 201
+2025-02-28 11:00:11 - Backoffice restored to A01
+2025-02-28 11:00:14 - Infrastructure migration completed successfully
+2025-02-28 11:00:14 - Applying transceiver positions
+2025-02-28 11:00:15 - PUT payload for BS B TRX 0: {"height": 0.0, "position": {"floor": 0, "section": null, "shelf": null, "x": 83.6210913820841, "y": 73.54108866361975}, "rotation": 0.0}
+2025-02-28 11:00:16 - Successfully migrated position for BS B TRX 0
+2025-02-28 11:00:16 - PUT payload for BS B TRX 1: {"height": 0.0, "position": {"floor": 0, "section": null, "shelf": null, "x": 95.18344394149909, "y": 63.87939679890311}, "rotation": 0.0}
+2025-02-28 11:00:17 - Successfully migrated position for BS B TRX 1
+2025-02-28 11:00:19 - PUT payload for BS A TRX 0: {"height": 0.0, "position": {"floor": 0, "section": null, "shelf": null, "x": 94.86666715904937, "y": 72.9075350987203}, "rotation": 0.0}
+2025-02-28 11:00:20 - Successfully migrated position for BS A TRX 0
+2025-02-28 11:00:20 - PUT payload for BS A TRX 1: {"height": 0.0, "position": {"floor": 0, "section": null, "shelf": null, "x": 102.94447511151739, "y": 64.19617358135284}, "rotation": 0.0}
+2025-02-28 11:00:21 - Successfully migrated position for BS A TRX 1
+2025-02-28 11:00:21 - Transceiver position migration completed
+2025-02-28 11:00:30 - 
+--- Starting links migration from demo.ps to 11111.plusa ---
+2025-02-28 11:00:30 - Fetching links from demo.ps...
+2025-02-28 11:00:31 - Fetched batch of 7 links (total so far: 7)
+2025-02-28 11:00:31 - Successfully fetched 7 links from demo.ps
+2025-02-28 11:00:31 - Found 7 links to migrate
+2025-02-28 11:00:31 - Cleaning link data for migration...
+2025-02-28 11:00:31 - Uploading 7 links to 11111.plusa...
+2025-02-28 11:00:31 - Uploading 7 links to 11111.plusa...
+2025-02-28 11:00:31 - Uploading batch 1 (7 links)
+2025-02-28 11:00:31 - Request body preview: [
+  {
+    "barcode": "N4061321995613288",
+    "homeTrx": "PM1",
+    "links": [
+      {
+        "barcode": "N4061321995613288",
+        "displayPosition": 0,
+        "itemId": "10003",
+        "linkedItemId": "10003"
+      }
+    ],
+    "modelName": "SmartTAG Power L Red"
+  },
+  {
+    "barcode": "N4081315704513279",
+    "homeTrx": "PM1",
+    "links": [
+      {
+        "barcode": "N4081315704513279",
+        "displayPosition": 0,
+        "itemId": "10005",
+        "linkedItemId": "10005"
+      }
+    ],
+    "modelName": "SmartTAG Power M Red CHASAL"
+  }
+]
+2025-02-28 11:00:31 - ... and 5 more records
+2025-02-28 11:00:32 - Batch accepted for processing: 202 - {"requestId":7000010}
+2025-02-28 11:00:32 - Checking request status (attempt 1/10), request ID: 7000010
+2025-02-28 11:00:33 - Request status: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081315704513279",
+      "itemId": "10005",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "10003",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4113270532413273",
+      "itemId": "8006786051061",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4133361837213272",
+      "itemId": "10",
+      "status": "PENDING"
+    }
+  ]
+}
+2025-02-28 11:00:33 - Request 7000010 still processing, waiting 5 seconds...
+2025-02-28 11:00:38 - Checking request status (attempt 2/10), request ID: 7000010
+2025-02-28 11:00:39 - Request status: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081315704513279",
+      "itemId": "10005",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "10003",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4113270532413273",
+      "itemId": "8006786051061",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4133361837213272",
+      "itemId": "10",
+      "status": "PENDING"
+    }
+  ]
+}
+2025-02-28 11:00:39 - Request 7000010 still processing, waiting 5 seconds...
+2025-02-28 11:00:44 - Checking request status (attempt 3/10), request ID: 7000010
+2025-02-28 11:00:45 - Request status: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081315704513279",
+      "itemId": "10005",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "10003",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4113270532413273",
+      "itemId": "8006786051061",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4133361837213272",
+      "itemId": "10",
+      "status": "PENDING"
+    }
+  ]
+}
+2025-02-28 11:00:45 - Request 7000010 still processing, waiting 5 seconds...
+2025-02-28 11:00:50 - Checking request status (attempt 4/10), request ID: 7000010
+2025-02-28 11:00:51 - Request status: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081315704513279",
+      "itemId": "10005",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "10003",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4113270532413273",
+      "itemId": "8006786051061",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4133361837213272",
+      "itemId": "10",
+      "status": "PENDING"
+    }
+  ]
+}
+2025-02-28 11:00:51 - Request 7000010 still processing, waiting 5 seconds...
+2025-02-28 11:00:56 - Checking request status (attempt 5/10), request ID: 7000010
+2025-02-28 11:00:57 - Request status: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081315704513279",
+      "itemId": "10005",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "10003",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4113270532413273",
+      "itemId": "8006786051061",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4133361837213272",
+      "itemId": "10",
+      "status": "PENDING"
+    }
+  ]
+}
+2025-02-28 11:00:57 - Request 7000010 still processing, waiting 5 seconds...
+2025-02-28 11:01:02 - Checking request status (attempt 6/10), request ID: 7000010
+2025-02-28 11:01:03 - Request status: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081315704513279",
+      "itemId": "10005",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "10003",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4113270532413273",
+      "itemId": "8006786051061",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4133361837213272",
+      "itemId": "10",
+      "status": "PENDING"
+    }
+  ]
+}
+2025-02-28 11:01:03 - Request 7000010 still processing, waiting 5 seconds...
+2025-02-28 11:01:08 - Checking request status (attempt 7/10), request ID: 7000010
+2025-02-28 11:01:09 - Request status: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081315704513279",
+      "itemId": "10005",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "10003",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4113270532413273",
+      "itemId": "8006786051061",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4133361837213272",
+      "itemId": "10",
+      "status": "PENDING"
+    }
+  ]
+}
+2025-02-28 11:01:09 - Request 7000010 still processing, waiting 5 seconds...
+2025-02-28 11:01:14 - Checking request status (attempt 8/10), request ID: 7000010
+2025-02-28 11:01:15 - Request status: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081315704513279",
+      "itemId": "10005",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "10003",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4113270532413273",
+      "itemId": "8006786051061",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4133361837213272",
+      "itemId": "10",
+      "status": "PENDING"
+    }
+  ]
+}
+2025-02-28 11:01:15 - Request 7000010 still processing, waiting 5 seconds...
+2025-02-28 11:01:20 - Checking request status (attempt 9/10), request ID: 7000010
+2025-02-28 11:01:21 - Request status: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081315704513279",
+      "itemId": "10005",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "10003",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4113270532413273",
+      "itemId": "8006786051061",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4133361837213272",
+      "itemId": "10",
+      "status": "PENDING"
+    }
+  ]
+}
+2025-02-28 11:01:21 - Request 7000010 still processing, waiting 5 seconds...
+2025-02-28 11:01:26 - Checking request status (attempt 10/10), request ID: 7000010
+2025-02-28 11:01:27 - Request status: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081315704513279",
+      "itemId": "10005",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "10003",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4113270532413273",
+      "itemId": "8006786051061",
+      "status": "SUCCESS_NEW_ITEM"
+    },
+    {
+      "barcode": "N4133361837213272",
+      "itemId": "10",
+      "status": "PENDING"
+    }
+  ]
+}
+2025-02-28 11:01:27 - Request 7000010 still processing, waiting 5 seconds...
+2025-02-28 11:01:32 - Request status check timed out after 10 attempts
+2025-02-28 11:01:32 - Batch processing failed with request ID: 7000010
+2025-02-28 11:01:32 - Retrying batch in 5 seconds (attempt 2/3)...
+2025-02-28 11:01:38 - Batch accepted for processing: 202 - {"requestId":7000011}
+2025-02-28 11:01:38 - Checking request status (attempt 1/10), request ID: 7000011
+2025-02-28 11:01:39 - Request status: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081315704513279",
+      "itemId": "10005",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "10003",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4113270532413273",
+      "itemId": "8006786051061",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4133361837213272",
+      "itemId": "10",
+      "status": "PENDING"
+    }
+  ]
+}
+2025-02-28 11:01:39 - Request 7000011 still processing, waiting 5 seconds...
+2025-02-28 11:01:44 - Checking request status (attempt 2/10), request ID: 7000011
+2025-02-28 11:01:45 - Request status: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081315704513279",
+      "itemId": "10005",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "10003",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4113270532413273",
+      "itemId": "8006786051061",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4133361837213272",
+      "itemId": "10",
+      "status": "PENDING"
+    }
+  ]
+}
+2025-02-28 11:01:45 - Request 7000011 still processing, waiting 5 seconds...
+2025-02-28 11:01:50 - Checking request status (attempt 3/10), request ID: 7000011
+2025-02-28 11:01:51 - Request status: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081315704513279",
+      "itemId": "10005",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "10003",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4113270532413273",
+      "itemId": "8006786051061",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4133361837213272",
+      "itemId": "10",
+      "status": "PENDING"
+    }
+  ]
+}
+2025-02-28 11:01:51 - Request 7000011 still processing, waiting 5 seconds...
+2025-02-28 11:49:19 - Domain plusa : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 11:49:22 - Domain ps : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 11:49:46 - Successfully retrieved store data for domain plusa
+2025-02-28 11:49:47 - Successfully retrieved store data for domain ps
+2025-02-28 11:50:08 - 
+--- Starting links migration from 11111.plusa to demo.ps ---
+2025-02-28 11:50:08 - Fetching links from 11111.plusa...
+2025-02-28 11:50:09 - Fetched batch of 5 links (total so far: 5)
+2025-02-28 11:50:10 - Fetched batch of 1 links (total so far: 6)
+2025-02-28 11:50:10 - Successfully fetched 6 links from 11111.plusa
+2025-02-28 11:50:10 - Found 6 links to migrate
+2025-02-28 11:50:10 - Cleaning link data for migration...
+2025-02-28 11:50:10 - Uploading 6 links to demo.ps...
+2025-02-28 11:50:10 - Uploading 6 links to demo.ps...
+2025-02-28 11:50:10 - Uploading batch 1 (6 links)
+2025-02-28 11:50:10 - Request body preview: [
+  {
+    "barcode": "A4073092152116017",
+    "homeTrx": "A1",
+    "links": [
+      {
+        "barcode": "A4073092152116017",
+        "displayPosition": 0,
+        "itemId": "113948",
+        "linkedItemId": "113948"
+      }
+    ],
+    "modelName": "SmartTAG Color 1.6"
+  },
+  {
+    "barcode": "N4061321995613288",
+    "links": [
+      {
+        "barcode": "N4061321995613288",
+        "displayPosition": 0,
+        "itemId": "10003",
+        "linkedItemId": "10003"
+      }
+    ],
+    "modelName": "SmartTAG Power L Red"
+  }
+]
+2025-02-28 11:50:10 - ... and 4 more records
+2025-02-28 11:50:11 - Batch accepted for processing: 202 - {"requestId":5000004}
+2025-02-28 11:50:11 - Checking request status (attempt 1/10), request ID: 5000004
+2025-02-28 11:50:12 - Request status: IN_PROGRESS
+2025-02-28 11:51:12 - Checking request status (attempt 2/10), request ID: 5000004
+2025-02-28 11:51:13 - Request status: COMPLETED
+2025-02-28 11:51:13 - Request 5000004 completed successfully
+2025-02-28 11:51:13 - Batch processing completed successfully with request ID: 5000004
+2025-02-28 11:51:14 - Upload summary: 6 successful, 0 failed out of 6 links
+2025-02-28 11:51:14 - 
+--- Links Migration Summary ---
+2025-02-28 11:51:14 - Total links processed: 6
+2025-02-28 11:51:14 - Successfully migrated: 6
+2025-02-28 12:03:58 - Domain plusa : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 12:04:02 - Domain ps : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 12:04:26 - Successfully retrieved store data for domain plusa
+2025-02-28 12:04:28 - Successfully retrieved store data for domain ps
+2025-02-28 12:06:28 - 
+--- Starting links migration from 11111.plusa to demo.ps ---
+2025-02-28 12:06:28 - Fetching links from 11111.plusa...
+2025-02-28 12:06:29 - Fetched batch of 5 links (total so far: 5)
+2025-02-28 12:06:31 - Fetched batch of 1 links (total so far: 6)
+2025-02-28 12:06:31 - Successfully fetched 6 links from 11111.plusa
+2025-02-28 12:06:31 - Found 6 links to migrate
+2025-02-28 12:06:31 - Cleaning link data for migration...
+2025-02-28 12:06:31 - Uploading 6 links to demo.ps...
+2025-02-28 12:06:31 - Uploading 6 links to demo.ps...
+2025-02-28 12:06:31 - Uploading batch 1 (6 links)
+2025-02-28 12:06:31 - Request body preview: [
+  {
+    "barcode": "A4073092152116017",
+    "homeTrx": "A1",
+    "links": [
+      {
+        "barcode": "A4073092152116017",
+        "displayPosition": 0,
+        "itemId": "113948",
+        "linkedItemId": "113948"
+      }
+    ],
+    "modelName": "SmartTAG Color 1.6"
+  },
+  {
+    "barcode": "N4061321995613288",
+    "links": [
+      {
+        "barcode": "N4061321995613288",
+        "displayPosition": 0,
+        "itemId": "10003",
+        "linkedItemId": "10003"
+      }
+    ],
+    "modelName": "SmartTAG Power L Red"
+  }
+]
+2025-02-28 12:06:31 - ... and 4 more records
+2025-02-28 12:06:32 - Batch accepted for processing: 202 - {"requestId":5000005}
+2025-02-28 12:06:32 - Checking request status (attempt 1/10), request ID: 5000005
+2025-02-28 12:06:32 - Request status: IN_PROGRESS
+2025-02-28 12:07:32 - Checking request status (attempt 2/10), request ID: 5000005
+2025-02-28 12:07:34 - Request status: COMPLETED
+2025-02-28 12:07:34 - Request 5000005 completed successfully
+2025-02-28 12:07:34 - Batch processing completed successfully with request ID: 5000005
+2025-02-28 12:07:35 - Upload summary: 6 successful, 0 failed out of 6 links
+2025-02-28 12:07:35 - 
+--- Links Migration Summary ---
+2025-02-28 12:07:35 - Total links processed: 6
+2025-02-28 12:07:35 - Successfully migrated: 6
+2025-02-28 12:14:43 - Unexpected error in browser token retrieval: Message: session not created: cannot connect to chrome at 127.0.0.1:9222
+from chrome not reachable
+Stacktrace:
+	GetHandleVerifier [0x00D10B43+25139]
+	(No symbol) [0x00CA13F4]
+	(No symbol) [0x00B80340]
+	(No symbol) [0x00B741DA]
+	(No symbol) [0x00BB8696]
+	(No symbol) [0x00BAED7F]
+	(No symbol) [0x00BAEBB6]
+	(No symbol) [0x00BF90C2]
+	(No symbol) [0x00BF87DA]
+	(No symbol) [0x00BECDC6]
+	(No symbol) [0x00BBBDE9]
+	(No symbol) [0x00BBD124]
+	GetHandleVerifier [0x01014373+3185251]
+	GetHandleVerifier [0x0103291A+3309578]
+	GetHandleVerifier [0x0102CF42+3286578]
+	GetHandleVerifier [0x00DA7AE0+643536]
+	(No symbol) [0x00CAA20D]
+	(No symbol) [0x00CA70B8]
+	(No symbol) [0x00CA7257]
+	(No symbol) [0x00C99E00]
+	BaseThreadInitThunk [0x76AD7BA9+25]
+	RtlInitializeExceptionChain [0x77DDBD2B+107]
+	RtlClearBits [0x77DDBCAF+191]
+
+2025-02-28 12:15:32 - Domain plusa : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 12:15:35 - Domain ps : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 12:15:59 - Successfully retrieved store data for domain plusa
+2025-02-28 12:16:01 - Successfully retrieved store data for domain ps
+2025-02-28 12:16:12 - 
+--- Starting links migration from 11111.plusa to demo.ps ---
+2025-02-28 12:16:12 - Fetching links from 11111.plusa...
+2025-02-28 12:16:13 - Fetched batch of 5 links (total so far: 5)
+2025-02-28 12:16:15 - Fetched batch of 1 links (total so far: 6)
+2025-02-28 12:16:15 - Successfully fetched 6 links from 11111.plusa
+2025-02-28 12:16:15 - Found 6 links to migrate
+2025-02-28 12:16:15 - Cleaning link data for migration...
+2025-02-28 12:16:15 - Uploading 6 links to demo.ps...
+2025-02-28 12:16:15 - Uploading 6 links to demo.ps...
+2025-02-28 12:16:15 - Uploading batch 1 (6 links)
+2025-02-28 12:16:15 - Request body preview: [
+  {
+    "barcode": "A4073092152116017",
+    "homeTrx": "A1",
+    "links": [
+      {
+        "barcode": "A4073092152116017",
+        "displayPosition": 0,
+        "itemId": "113948",
+        "linkedItemId": "113948"
+      }
+    ],
+    "modelName": "SmartTAG Color 1.6"
+  },
+  {
+    "barcode": "N4061321995613288",
+    "links": [
+      {
+        "barcode": "N4061321995613288",
+        "displayPosition": 0,
+        "itemId": "10003",
+        "linkedItemId": "10003"
+      }
+    ],
+    "modelName": "SmartTAG Power L Red"
+  }
+]
+2025-02-28 12:16:15 - ... and 4 more records
+2025-02-28 12:16:16 - Batch accepted for processing: 202 - {"requestId":5000006}
+2025-02-28 12:16:16 - Checking request status (attempt 1/10), request ID: 5000006
+2025-02-28 12:16:18 - Full response: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "A4073092152116017",
+      "status": "UNKNOWN"
+    },
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "ERROR_NO_LINK_DEPARTMENTS"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "ERROR_NO_LINK_DEPARTMENTS"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "ERROR_NO_LINK_DEPARTMENTS"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "1000",
+      "status": "ERROR_ITEM_DOES_NOT_EXIST"
+    },
+    {
+      "barcode": "N4629281375713398",
+      "itemId": "114032",
+      "status": "ERROR_NO_LINK_DEPARTMENTS"
+    }
+  ]
+}
+2025-02-28 12:16:18 - Request status: IN_PROGRESS
+2025-02-28 12:17:18 - Checking request status (attempt 2/10), request ID: 5000006
+2025-02-28 12:17:20 - Full response: {
+  "status": "COMPLETED",
+  "results": [
+    {
+      "barcode": "A4073092152116017",
+      "status": "UNKNOWN"
+    },
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "ERROR_NO_LINK_DEPARTMENTS"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "ERROR_NO_LINK_DEPARTMENTS"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "ERROR_NO_LINK_DEPARTMENTS"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "1000",
+      "status": "ERROR_ITEM_DOES_NOT_EXIST"
+    },
+    {
+      "barcode": "N4629281375713398",
+      "itemId": "114032",
+      "status": "ERROR_NO_LINK_DEPARTMENTS"
+    }
+  ]
+}
+2025-02-28 12:17:20 - Request status: COMPLETED
+2025-02-28 12:17:20 - Request completed with 6 errors and 0 successes
+2025-02-28 12:17:20 - Error UNKNOWN: 1 plbarcodes: A4073092152116017
+2025-02-28 12:17:20 - Error ERROR_NO_LINK_DEPARTMENTS: 4 ItemIds: 10003, 10006, 10006, 114032
+2025-02-28 12:17:20 - Error ERROR_ITEM_DOES_NOT_EXIST: 1 ItemIds: 1000
+2025-02-28 12:17:20 - Batch processing completed with 6 errors, request ID: 5000006
+2025-02-28 12:17:21 - 
+--- Error Summary ---
+2025-02-28 12:17:21 - Error UNKNOWN: 1 ; plbarcodes: A4073092152116017
+2025-02-28 12:17:21 - Error ERROR_NO_LINK_DEPARTMENTS: 4 ; ItemIds: 10003, 10006, 10006, 114032
+2025-02-28 12:17:21 - Error ERROR_ITEM_DOES_NOT_EXIST: 1 ; ItemIds: 1000
+2025-02-28 12:17:21 - Upload summary: 0 successful, 6 failed out of 6 links
+2025-02-28 12:17:21 - 
+--- Links Migration Failed ---
+2025-02-28 12:35:50 - Domain plusa : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 12:35:54 - Domain ps : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 12:36:18 - Successfully retrieved store data for domain plusa
+2025-02-28 12:36:19 - Successfully retrieved store data for domain ps
+2025-02-28 12:38:20 - 
+--- Starting links migration from 11111.plusa to demo.ps ---
+2025-02-28 12:38:20 - Fetching links from 11111.plusa...
+2025-02-28 12:38:21 - Fetched batch of 5 links (total so far: 5)
+2025-02-28 12:38:22 - Fetched batch of 1 links (total so far: 6)
+2025-02-28 12:38:22 - Successfully fetched 6 links from 11111.plusa
+2025-02-28 12:38:22 - Found 6 links to migrate
+2025-02-28 12:38:22 - Cleaning link data for migration...
+2025-02-28 12:38:22 - Uploading 6 links to demo.ps...
+2025-02-28 12:38:22 - Uploading 6 links to demo.ps...
+2025-02-28 12:38:22 - Uploading batch 1 (5 links)
+2025-02-28 12:38:22 - Request body preview: [
+  {
+    "barcode": "A4073092152116017",
+    "homeTrx": "A1",
+    "links": [
+      {
+        "barcode": "A4073092152116017",
+        "displayPosition": 0,
+        "itemId": "113948",
+        "linkedItemId": "113948"
+      }
+    ],
+    "modelName": "SmartTAG Color 1.6"
+  },
+  {
+    "barcode": "N4061321995613288",
+    "links": [
+      {
+        "barcode": "N4061321995613288",
+        "displayPosition": 0,
+        "itemId": "10003",
+        "linkedItemId": "10003"
+      }
+    ],
+    "modelName": "SmartTAG Power L Red"
+  }
+]
+2025-02-28 12:38:22 - ... and 3 more records
+2025-02-28 12:38:24 - Batch accepted for processing: 202 - {"requestId":5000007}
+2025-02-28 12:38:24 - Waiting 15 seconds before first status check...
+2025-02-28 12:38:39 - Checking request status (attempt 1/10), request ID: 5000007
+2025-02-28 12:38:40 - Full response: {
+  "status": "COMPLETED",
+  "results": [
+    {
+      "barcode": "A4073092152116017",
+      "status": "UNKNOWN"
+    },
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "ERROR_NO_LINK_DEPARTMENTS"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "ERROR_NO_LINK_DEPARTMENTS"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "ERROR_NO_LINK_DEPARTMENTS"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "1000",
+      "status": "ERROR_ITEM_DOES_NOT_EXIST"
+    }
+  ]
+}
+2025-02-28 12:38:40 - Request status: COMPLETED
+2025-02-28 12:38:40 - Request completed with 5 errors and 0 successes
+2025-02-28 12:38:40 - Batch processing completed with 5 errors, request ID: 5000007
+2025-02-28 12:38:41 - Uploading batch 2 (1 links)
+2025-02-28 12:38:41 - Request body preview: [
+  {
+    "barcode": "N4629281375713398",
+    "homeTrx": "A2",
+    "links": [
+      {
+        "barcode": "N4629281375713398",
+        "displayPosition": 0,
+        "itemId": "114032",
+        "linkedItemId": "114032"
+      }
+    ],
+    "modelName": "SmartTAG Power S Red"
+  }
+]
+2025-02-28 12:38:42 - Batch accepted for processing: 202 - {"requestId":5000008}
+2025-02-28 12:38:42 - Waiting 15 seconds before first status check...
+2025-02-28 12:38:57 - Checking request status (attempt 1/10), request ID: 5000008
+2025-02-28 12:38:58 - Full response: {
+  "status": "COMPLETED",
+  "results": [
+    {
+      "barcode": "N4629281375713398",
+      "itemId": "114032",
+      "status": "ERROR_NO_LINK_DEPARTMENTS"
+    }
+  ]
+}
+2025-02-28 12:38:58 - Request status: COMPLETED
+2025-02-28 12:38:58 - Request completed with 1 errors and 0 successes
+2025-02-28 12:38:58 - Batch processing completed with 1 errors, request ID: 5000008
+2025-02-28 12:38:59 - 
+--- Error Summary ---
+2025-02-28 12:38:59 - Error UNKNOWN: 1 ; plbarcodes: A4073092152116017
+2025-02-28 12:38:59 - Error ERROR_NO_LINK_DEPARTMENTS: 4
+2025-02-28 12:38:59 - Error ERROR_ITEM_DOES_NOT_EXIST: 1 ; ItemIds: 1000
+2025-02-28 12:38:59 - Upload summary: 0 successful, 6 failed out of 6 links
+2025-02-28 12:38:59 - 
+--- Links Migration Failed ---
+2025-02-28 12:43:56 - Get BS Response: [{"hardwareId": "C2803135184150862", "status": "IRREADY"}, {"hardwareId": "A3803090016151002", "status": "IRREADY"}]
+2025-02-28 12:43:58 - Found graphical.png configuration on 11111.plusa
+2025-02-28 12:44:00 - Found blueprint.png configuration on 11111.plusa
+2025-02-28 12:44:00 - Geolocation found, collecting transceiver positions
+2025-02-28 12:44:01 - GET transceiver locations for BS B
+2025-02-28 12:44:01 - Collected position for BS B TRX port 0
+2025-02-28 12:44:01 - Collected position for BS B TRX port 1
+2025-02-28 12:44:02 - GET transceiver locations for BS A
+2025-02-28 12:44:02 - Collected position for BS A TRX port 0
+2025-02-28 12:44:02 - Collected position for BS A TRX port 1
+2025-02-28 12:44:02 - Found secret for basestation C2803135184150862
+2025-02-28 12:44:07 - Add BS C2803135184150862 Status: 200
+2025-02-28 12:44:07 - Found secret for basestation A3803090016151002
+2025-02-28 12:44:28 - Connection error adding BS A3803090016151002
+2025-02-28 12:44:28 - Failed to pre-add basestation A3803090016151002, MIGRATION ABORTED
+2025-02-28 12:45:16 - Get BS Response: [{"hardwareId": "C2803135184150862", "status": "IRREADY"}, {"hardwareId": "A3803090016151002", "status": "IRREADY"}]
+2025-02-28 12:45:18 - Found graphical.png configuration on 11111.plusa
+2025-02-28 12:45:20 - Found blueprint.png configuration on 11111.plusa
+2025-02-28 12:45:20 - Geolocation found, collecting transceiver positions
+2025-02-28 12:45:21 - GET transceiver locations for BS B
+2025-02-28 12:45:21 - Collected position for BS B TRX port 0
+2025-02-28 12:45:21 - Collected position for BS B TRX port 1
+2025-02-28 12:45:22 - GET transceiver locations for BS A
+2025-02-28 12:45:22 - Collected position for BS A TRX port 0
+2025-02-28 12:45:22 - Collected position for BS A TRX port 1
+2025-02-28 12:45:22 - Found secret for basestation C2803135184150862
+2025-02-28 12:45:28 - Add BS C2803135184150862 Status: 200
+2025-02-28 12:45:28 - Found secret for basestation A3803090016151002
+2025-02-28 12:45:49 - Connection error adding BS A3803090016151002
+2025-02-28 12:45:49 - Failed to pre-add basestation A3803090016151002, MIGRATION ABORTED
+2025-02-28 12:46:14 - Get BS Response: [{"hardwareId": "C2803135184150862", "status": "IRREADY"}, {"hardwareId": "A3803090016151002", "status": "IRREADY"}]
+2025-02-28 12:46:16 - Found graphical.png configuration on 11111.plusa
+2025-02-28 12:46:18 - Found blueprint.png configuration on 11111.plusa
+2025-02-28 12:46:18 - Geolocation found, collecting transceiver positions
+2025-02-28 12:46:19 - GET transceiver locations for BS B
+2025-02-28 12:46:19 - Collected position for BS B TRX port 0
+2025-02-28 12:46:19 - Collected position for BS B TRX port 1
+2025-02-28 12:46:20 - GET transceiver locations for BS A
+2025-02-28 12:46:20 - Collected position for BS A TRX port 0
+2025-02-28 12:46:20 - Collected position for BS A TRX port 1
+2025-02-28 12:46:20 - Found secret for basestation C2803135184150862
+2025-02-28 12:46:24 - Add BS C2803135184150862 Status: 200
+2025-02-28 12:46:24 - Found secret for basestation A3803090016151002
+2025-02-28 12:46:28 - Add BS A3803090016151002 Status: 200
+2025-02-28 12:46:28 - All basestation secrets verified and pre-added successfully
+2025-02-28 12:46:29 - Get LinkDepartment Response: [{"alias": "", "id": "A01", "isBackoffice": true, "transceivers": [1]}, {"alias": "", "id": "A02", "isBackoffice": false, "transceivers": [2]}, {"alias": "", "id": "B01", "isBackoffice": false, "transceivers": [1, 2]}]
+2025-02-28 12:46:33 - 11111.plusa : Department A02 deleted - Status: 204
+2025-02-28 12:46:35 - 11111.plusa : Department B01 deleted - Status: 204
+2025-02-28 12:46:36 - 11111.plusa : Backoffice department deleted - Status: 204
+2025-02-28 12:46:38 - 11111.plusa : Basestation B deleted - Status: 204
+2025-02-28 12:46:39 - 11111.plusa : Basestation A deleted - Status: 204
+2025-02-28 12:46:39 - Starting migration for 2 basestations to demo.ps
+2025-02-28 12:46:39 - Processing basestation C2803135184150862
+2025-02-28 12:46:40 - C2803135184150862 status: Not found
+2025-02-28 12:46:56 - C2803135184150862 status: Not found
+2025-02-28 12:47:13 - C2803135184150862 status: Not found
+2025-02-28 12:47:29 - C2803135184150862 status: Not found
+2025-02-28 12:47:45 - C2803135184150862 status: Not found
+2025-02-28 12:48:01 - C2803135184150862 status: Not found
+2025-02-28 12:48:18 - C2803135184150862 status: Not found
+2025-02-28 12:48:34 - C2803135184150862 status: Not found
+2025-02-28 12:48:50 - C2803135184150862 status: Not found
+2025-02-28 12:49:07 - C2803135184150862 status: Not found
+2025-02-28 12:49:23 - C2803135184150862 status: Not found
+2025-02-28 12:49:39 - C2803135184150862 status: Not found
+2025-02-28 12:49:57 - demo.ps : Basestation C2803135184150862 accepted with zone Main Store
+2025-02-28 12:49:57 - Processing basestation A3803090016151002
+2025-02-28 12:49:59 - demo.ps : Basestation A3803090016151002 accepted with zone Main Store
+2025-02-28 12:50:00 - C2803135184150862 status: CONNECTING
+2025-02-28 12:50:17 - C2803135184150862 status: CONNECTING
+2025-02-28 12:50:33 - C2803135184150862 status: CONNECTING
+2025-02-28 12:50:49 - demo.ps : Basestation C2803135184150862 ready
+2025-02-28 12:50:50 - A3803090016151002 status: CONNECTED
+2025-02-28 12:51:08 - A3803090016151002 status: BOOTING
+2025-02-28 12:51:24 - A3803090016151002 status: BOOTING
+2025-02-28 12:51:40 - demo.ps : Basestation A3803090016151002 ready
+2025-02-28 12:51:40 - demo.ps : All basestations migrated successfully
+2025-02-28 12:51:41 - Created department A01 - Status: 201
+2025-02-28 12:51:42 - Created department A02 - Status: 201
+2025-02-28 12:51:43 - Created department B01 - Status: 201
+2025-02-28 12:51:45 - Backoffice restored to A01
+2025-02-28 12:51:47 - Infrastructure migration completed successfully
+2025-02-28 12:51:47 - Applying transceiver positions
+2025-02-28 12:51:47 - PUT payload for BS B TRX 0: {"height": 0.0, "position": {"floor": 0, "section": null, "shelf": null, "x": 83.6210913820841, "y": 73.54108866361975}, "rotation": 0.0}
+2025-02-28 12:51:48 - Successfully migrated position for BS B TRX 0
+2025-02-28 12:51:48 - PUT payload for BS B TRX 1: {"height": 0.0, "position": {"floor": 0, "section": null, "shelf": null, "x": 95.18344394149909, "y": 63.87939679890311}, "rotation": 0.0}
+2025-02-28 12:51:49 - Successfully migrated position for BS B TRX 1
+2025-02-28 12:51:50 - PUT payload for BS A TRX 0: {"height": 0.0, "position": {"floor": 0, "section": null, "shelf": null, "x": 94.86666715904937, "y": 72.9075350987203}, "rotation": 0.0}
+2025-02-28 12:51:51 - Successfully migrated position for BS A TRX 0
+2025-02-28 12:51:51 - PUT payload for BS A TRX 1: {"height": 0.0, "position": {"floor": 0, "section": null, "shelf": null, "x": 102.94447511151739, "y": 64.19617358135284}, "rotation": 0.0}
+2025-02-28 12:51:52 - Successfully migrated position for BS A TRX 1
+2025-02-28 12:51:52 - Transceiver position migration completed
+2025-02-28 12:54:00 - 
+--- Starting links migration from 11111.plusa to demo.ps ---
+2025-02-28 12:54:00 - Fetching links from 11111.plusa...
+2025-02-28 12:54:01 - Fetched batch of 5 links (total so far: 5)
+2025-02-28 12:54:03 - Fetched batch of 1 links (total so far: 6)
+2025-02-28 12:54:03 - Successfully fetched 6 links from 11111.plusa
+2025-02-28 12:54:03 - Found 6 links to migrate
+2025-02-28 12:54:03 - Cleaning link data for migration...
+2025-02-28 12:54:03 - Uploading 6 links to demo.ps...
+2025-02-28 12:54:03 - Uploading 6 links to demo.ps...
+2025-02-28 12:54:03 - Uploading batch 1 (5 links)
+2025-02-28 12:54:03 - Request body preview: [
+  {
+    "barcode": "A4073092152116017",
+    "homeTrx": "A1",
+    "links": [
+      {
+        "barcode": "A4073092152116017",
+        "displayPosition": 0,
+        "itemId": "113948",
+        "linkedItemId": "113948"
+      }
+    ],
+    "modelName": "SmartTAG Color 1.6"
+  },
+  {
+    "barcode": "N4061321995613288",
+    "links": [
+      {
+        "barcode": "N4061321995613288",
+        "displayPosition": 0,
+        "itemId": "10003",
+        "linkedItemId": "10003"
+      }
+    ],
+    "modelName": "SmartTAG Power L Red"
+  }
+]
+2025-02-28 12:54:03 - ... and 3 more records
+2025-02-28 12:54:04 - Batch accepted for processing: 202 - {"requestId":5000009}
+2025-02-28 12:54:04 - Waiting 15 seconds before first status check...
+2025-02-28 12:54:19 - Checking request status (attempt 1/10), request ID: 5000009
+2025-02-28 12:54:20 - Full response: {
+  "status": "COMPLETED",
+  "results": [
+    {
+      "barcode": "A4073092152116017",
+      "status": "UNKNOWN"
+    },
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "SUCCESS"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "1000",
+      "status": "ERROR_ITEM_DOES_NOT_EXIST"
+    }
+  ]
+}
+2025-02-28 12:54:20 - Request status: COMPLETED
+2025-02-28 12:54:20 - Request completed with 2 errors and 3 successes
+2025-02-28 12:54:20 - Batch processing completed with 2 errors, request ID: 5000009
+2025-02-28 12:54:21 - Uploading batch 2 (1 links)
+2025-02-28 12:54:21 - Request body preview: [
+  {
+    "barcode": "N4629281375713398",
+    "homeTrx": "A2",
+    "links": [
+      {
+        "barcode": "N4629281375713398",
+        "displayPosition": 0,
+        "itemId": "114032",
+        "linkedItemId": "114032"
+      }
+    ],
+    "modelName": "SmartTAG Power S Red"
+  }
+]
+2025-02-28 12:54:22 - Batch accepted for processing: 202 - {"requestId":5000010}
+2025-02-28 12:54:22 - Waiting 15 seconds before first status check...
+2025-02-28 12:54:37 - Checking request status (attempt 1/10), request ID: 5000010
+2025-02-28 12:54:38 - Full response: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "N4629281375713398",
+      "itemId": "114032",
+      "status": "PENDING"
+    }
+  ]
+}
+2025-02-28 12:54:38 - Request status: IN_PROGRESS
+2025-02-28 12:55:38 - Checking request status (attempt 2/10), request ID: 5000010
+2025-02-28 12:55:39 - Full response: {
+  "status": "COMPLETED",
+  "results": [
+    {
+      "barcode": "N4629281375713398",
+      "itemId": "114032",
+      "status": "SUCCESS"
+    }
+  ]
+}
+2025-02-28 12:55:39 - Request status: COMPLETED
+2025-02-28 12:55:39 - Request 5000010 completed successfully with all items processed
+2025-02-28 12:55:39 - Batch processing completed successfully with request ID: 5000010
+2025-02-28 12:55:40 - 
+--- Error Summary ---
+2025-02-28 12:55:40 - Error UNKNOWN: 1 ; plbarcodes: A4073092152116017
+2025-02-28 12:55:40 - Error ERROR_ITEM_DOES_NOT_EXIST: 1 ; ItemIds: 1000
+2025-02-28 12:55:40 - Upload summary: 4 successful, 2 failed out of 6 links
+2025-02-28 12:55:40 - 
+--- Links Migration Failed ---
+2025-02-28 13:02:41 - Domain plusa : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 13:02:45 - Domain ps : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 13:03:10 - Successfully retrieved store data for domain plusa
+2025-02-28 13:03:12 - Successfully retrieved store data for domain ps
+2025-02-28 13:03:21 - 
+--- Starting links migration from 11111.plusa to demo.ps ---
+2025-02-28 13:03:21 - Fetching links from 11111.plusa...
+2025-02-28 13:03:22 - Fetched batch of 5 links (total so far: 5)
+2025-02-28 13:03:23 - Fetched batch of 1 links (total so far: 6)
+2025-02-28 13:03:23 - Successfully fetched 6 links from 11111.plusa
+2025-02-28 13:03:23 - Found 6 links to migrate
+2025-02-28 13:03:23 - Cleaning link data for migration...
+2025-02-28 13:03:23 - Uploading 6 links to demo.ps...
+2025-02-28 13:03:23 - Uploading 6 links to demo.ps...
+2025-02-28 13:03:23 - Step 1: Uploading 2 batches
+2025-02-28 13:03:23 - Uploading batch 1 (5 links)
+2025-02-28 13:03:23 - Request body preview: [
+  {
+    "barcode": "A4073092152116017",
+    "homeTrx": "A1",
+    "links": [
+      {
+        "barcode": "A4073092152116017",
+        "displayPosition": 0,
+        "itemId": "113948",
+        "linkedItemId": "113948"
+      }
+    ],
+    "modelName": "SmartTAG Color 1.6"
+  },
+  {
+    "barcode": "N4061321995613288",
+    "links": [
+      {
+        "barcode": "N4061321995613288",
+        "displayPosition": 0,
+        "itemId": "10003",
+        "linkedItemId": "10003"
+      }
+    ],
+    "modelName": "SmartTAG Power L Red"
+  }
+]
+2025-02-28 13:03:23 - ... and 3 more records
+2025-02-28 13:03:24 - Batch 1 accepted for processing with request ID: 5000011
+2025-02-28 13:03:25 - Uploading batch 2 (1 links)
+2025-02-28 13:03:25 - Request body preview: [
+  {
+    "barcode": "N4629281375713398",
+    "homeTrx": "A2",
+    "links": [
+      {
+        "barcode": "N4629281375713398",
+        "displayPosition": 0,
+        "itemId": "114032",
+        "linkedItemId": "114032"
+      }
+    ],
+    "modelName": "SmartTAG Power S Red"
+  }
+]
+2025-02-28 13:03:26 - Batch 2 accepted for processing with request ID: 5000012
+2025-02-28 13:03:27 - 
+Step 2: Checking status of 2 pending requests
+2025-02-28 13:03:27 - Checking status of batch 1 (request ID: 5000011)
+2025-02-28 13:03:27 - Waiting 15 seconds before first status check...
+2025-02-28 13:03:42 - Checking request status (attempt 1/10), request ID: 5000011
+2025-02-28 13:03:43 - Full response: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "A4073092152116017",
+      "status": "UNKNOWN"
+    },
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "1000",
+      "status": "ERROR_ITEM_DOES_NOT_EXIST"
+    }
+  ]
+}
+2025-02-28 13:03:43 - Request status: IN_PROGRESS
+2025-02-28 13:04:43 - Checking request status (attempt 2/10), request ID: 5000011
+2025-02-28 13:04:44 - Full response: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "A4073092152116017",
+      "status": "UNKNOWN"
+    },
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "1000",
+      "status": "ERROR_ITEM_DOES_NOT_EXIST"
+    }
+  ]
+}
+2025-02-28 13:04:44 - Request status: IN_PROGRESS
+2025-02-28 13:05:44 - Checking request status (attempt 3/10), request ID: 5000011
+2025-02-28 13:05:46 - Full response: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "A4073092152116017",
+      "status": "UNKNOWN"
+    },
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "1000",
+      "status": "ERROR_ITEM_DOES_NOT_EXIST"
+    }
+  ]
+}
+2025-02-28 13:05:46 - Request status: IN_PROGRESS
+2025-02-28 13:06:46 - Checking request status (attempt 4/10), request ID: 5000011
+2025-02-28 13:06:47 - Full response: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "A4073092152116017",
+      "status": "UNKNOWN"
+    },
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "1000",
+      "status": "ERROR_ITEM_DOES_NOT_EXIST"
+    }
+  ]
+}
+2025-02-28 13:06:47 - Request status: IN_PROGRESS
+2025-02-28 13:07:47 - Checking request status (attempt 5/10), request ID: 5000011
+2025-02-28 13:07:48 - Full response: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "A4073092152116017",
+      "status": "UNKNOWN"
+    },
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "1000",
+      "status": "ERROR_ITEM_DOES_NOT_EXIST"
+    }
+  ]
+}
+2025-02-28 13:07:48 - Request status: IN_PROGRESS
+2025-02-28 13:08:48 - Checking request status (attempt 6/10), request ID: 5000011
+2025-02-28 13:08:49 - Full response: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "A4073092152116017",
+      "status": "UNKNOWN"
+    },
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "1000",
+      "status": "ERROR_ITEM_DOES_NOT_EXIST"
+    }
+  ]
+}
+2025-02-28 13:08:49 - Request status: IN_PROGRESS
+2025-02-28 13:09:49 - Checking request status (attempt 7/10), request ID: 5000011
+2025-02-28 13:09:50 - Full response: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "A4073092152116017",
+      "status": "UNKNOWN"
+    },
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "1000",
+      "status": "ERROR_ITEM_DOES_NOT_EXIST"
+    }
+  ]
+}
+2025-02-28 13:09:50 - Request status: IN_PROGRESS
+2025-02-28 13:10:50 - Checking request status (attempt 8/10), request ID: 5000011
+2025-02-28 13:10:51 - Full response: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "A4073092152116017",
+      "status": "UNKNOWN"
+    },
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "1000",
+      "status": "ERROR_ITEM_DOES_NOT_EXIST"
+    }
+  ]
+}
+2025-02-28 13:10:51 - Request status: IN_PROGRESS
+2025-02-28 13:12:16 - Domain plusa : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 13:12:20 - Domain ps : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 13:12:44 - Successfully retrieved store data for domain plusa
+2025-02-28 13:12:46 - Successfully retrieved store data for domain ps
+2025-02-28 13:12:50 - 
+--- Starting links migration from 11111.plusa to demo.ps ---
+2025-02-28 13:12:50 - Fetching links from 11111.plusa...
+2025-02-28 13:12:52 - Fetched batch of 5 links (total so far: 5)
+2025-02-28 13:12:53 - Fetched batch of 1 links (total so far: 6)
+2025-02-28 13:12:53 - Successfully fetched 6 links from 11111.plusa
+2025-02-28 13:12:53 - Found 6 links to migrate
+2025-02-28 13:12:53 - Cleaning link data for migration...
+2025-02-28 13:12:53 - Uploading 6 links to demo.ps...
+2025-02-28 13:12:53 - Uploading 6 links to demo.ps...
+2025-02-28 13:12:53 - Step 1: Uploading 2 batches
+2025-02-28 13:12:53 - Uploading batch 1 (5 links)
+2025-02-28 13:12:53 - Request body preview: [
+  {
+    "barcode": "A4073092152116017",
+    "homeTrx": "A1",
+    "links": [
+      {
+        "barcode": "A4073092152116017",
+        "displayPosition": 0,
+        "itemId": "113948",
+        "linkedItemId": "113948"
+      }
+    ],
+    "modelName": "SmartTAG Color 1.6"
+  },
+  {
+    "barcode": "N4061321995613288",
+    "links": [
+      {
+        "barcode": "N4061321995613288",
+        "displayPosition": 0,
+        "itemId": "10003",
+        "linkedItemId": "10003"
+      }
+    ],
+    "modelName": "SmartTAG Power L Red"
+  }
+]
+2025-02-28 13:12:53 - ... and 3 more records
+2025-02-28 13:12:55 - Batch 1 accepted for processing with request ID: 5000014
+2025-02-28 13:12:56 - Uploading batch 2 (1 links)
+2025-02-28 13:12:56 - Request body preview: [
+  {
+    "barcode": "N4629281375713398",
+    "homeTrx": "A2",
+    "links": [
+      {
+        "barcode": "N4629281375713398",
+        "displayPosition": 0,
+        "itemId": "114032",
+        "linkedItemId": "114032"
+      }
+    ],
+    "modelName": "SmartTAG Power S Red"
+  }
+]
+2025-02-28 13:12:57 - Batch 2 accepted for processing with request ID: 5000015
+2025-02-28 13:12:58 - 
+Step 2: Checking status of 2 pending requests
+2025-02-28 13:12:58 - Checking status of batch 1 (request ID: 5000014)
+2025-02-28 13:12:58 - Waiting 15 seconds before first status check...
+2025-02-28 13:13:13 - Checking request status (attempt 1/10), request ID: 5000014
+2025-02-28 13:13:14 - Full response: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "A4073092152116017",
+      "status": "UNKNOWN"
+    },
+    {
+      "barcode": "N4061321995613288",
+      "itemId": "10003",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081315789713274",
+      "itemId": "10006",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081332218813394",
+      "itemId": "10006",
+      "status": "PENDING"
+    },
+    {
+      "barcode": "N4081332574313394",
+      "itemId": "1000",
+      "status": "ERROR_ITEM_DOES_NOT_EXIST"
+    }
+  ]
+}
+2025-02-28 13:13:14 - Request status: IN_PROGRESS
+2025-02-28 13:13:14 - Request processed with 2 errors, 0 successes, 3 still pending
+2025-02-28 13:13:14 - Batch 1 processing completed with 2 errors
+2025-02-28 13:13:14 - Checking status of batch 2 (request ID: 5000015)
+2025-02-28 13:13:14 - Waiting 15 seconds before first status check...
+2025-02-28 13:13:29 - Checking request status (attempt 1/10), request ID: 5000015
+2025-02-28 13:13:30 - Full response: {
+  "status": "IN_PROGRESS",
+  "results": [
+    {
+      "barcode": "N4629281375713398",
+      "itemId": "114032",
+      "status": "PENDING"
+    }
+  ]
+}
+2025-02-28 13:13:30 - Request status: IN_PROGRESS
+2025-02-28 13:13:30 - Request 5000015 processed successfully with 0 successes, 1 still pending
+2025-02-28 13:13:30 - Batch 2 processing completed successfully
+2025-02-28 13:13:30 - 
+--- Error Summary ---
+2025-02-28 13:13:30 - Error UNKNOWN: 1 ; plbarcodes: A4073092152116017
+2025-02-28 13:13:30 - Error ERROR_ITEM_DOES_NOT_EXIST: 1 ; ItemIds: 1000
+2025-02-28 13:13:30 - Upload summary: 4 successful, 2 failed Out of 6 total links
+2025-02-28 13:13:30 - 
+--- Links Migration Failed ---
+2025-02-28 13:16:33 - Domain plusa : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 13:16:37 - Domain ps : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 13:17:01 - Successfully retrieved store data for domain plusa
+2025-02-28 13:17:03 - Successfully retrieved store data for domain ps
+2025-02-28 13:17:27 - 
+--- Starting links migration from 11111.plusa to demo.ps ---
+2025-02-28 13:17:27 - Fetching links from 11111.plusa...
+2025-02-28 13:17:28 - Fetched batch of 5 links (total so far: 5)
+2025-02-28 13:17:29 - Fetched batch of 1 links (total so far: 6)
+2025-02-28 13:17:29 - Successfully fetched 6 links from 11111.plusa
+2025-02-28 13:17:29 - Found 6 links to migrate
+2025-02-28 13:17:29 - Cleaning link data for migration...
+2025-02-28 13:17:29 - Uploading 6 links to demo.ps...
+2025-02-28 13:17:29 - Uploading 6 links to demo.ps...
+2025-02-28 13:17:29 - Step 1: Uploading 2 batches
+2025-02-28 13:17:29 - Uploading batch 1 (5 links)
+2025-02-28 13:17:30 - Batch 1 accepted for processing with request ID: 5000016
+2025-02-28 13:17:31 - Uploading batch 2 (1 links)
+2025-02-28 13:17:32 - Batch 2 accepted for processing with request ID: 5000017
+2025-02-28 13:17:33 - 
+Step 2: Checking status of 2 pending requests
+2025-02-28 13:17:33 - Checking status of batch 1 (request ID: 5000016)
+2025-02-28 13:17:33 - Waiting 15 seconds before first status check...
+2025-02-28 13:17:48 - Checking request status (attempt 1/10), request ID: 5000016
+2025-02-28 13:17:49 - Request status: IN_PROGRESS
+2025-02-28 13:17:49 - Request processed with 2 errors, 0 successes, 3 still pending
+2025-02-28 13:17:49 - Batch 1 processing completed with 2 errors
+2025-02-28 13:17:49 - Checking status of batch 2 (request ID: 5000017)
+2025-02-28 13:17:49 - Waiting 15 seconds before first status check...
+2025-02-28 13:18:05 - Checking request status (attempt 1/10), request ID: 5000017
+2025-02-28 13:18:06 - Request status: IN_PROGRESS
+2025-02-28 13:18:06 - Request 5000017 processed successfully with 0 successes, 1 still pending
+2025-02-28 13:18:06 - Batch 2 processing completed successfully
+2025-02-28 13:18:06 - 
+--- Error Summary ---
+2025-02-28 13:18:06 - Error UNKNOWN: 1 ; plbarcodes: A4073092152116017
+2025-02-28 13:18:06 - Error ERROR_ITEM_DOES_NOT_EXIST: 1 ; ItemIds: 1000
+2025-02-28 13:18:06 - Upload summary: 4 successful, 2 failed Out of 6 total links
+2025-02-28 13:18:06 - 
+--- Links Migration Failed ---
+2025-02-28 13:22:27 - Successfully created property: 152x152_0
+2025-02-28 13:22:28 - Successfully created property: 152x152_1
+2025-02-28 13:22:29 - Successfully created property: 296x152_0
+2025-02-28 13:22:30 - Successfully created property: 296x152_1
+2025-02-28 13:22:31 - Successfully created property: 208x112_0
+2025-02-28 13:22:32 - Successfully created property: 208x112_1
+2025-02-28 13:22:33 - Successfully created property: 296x128_0
+2025-02-28 13:22:34 - Successfully created property: 296x128_1
+2025-02-28 13:22:35 - Successfully created property: 1304x984_1
+2025-02-28 13:22:36 - Successfully created property: 1304x984_0
+2025-02-28 13:22:37 - Successfully created property: 800x480_0
+2025-02-28 13:22:37 - Successfully created property: 800x480_1
+2025-02-28 13:22:38 - Successfully created property: 648x480_0
+2025-02-28 13:22:39 - Successfully created property: 648x480_1
+2025-02-28 13:22:40 - Successfully created property: 400x300_0
+2025-02-28 13:22:41 - Successfully created property: 400x300_1
+2025-02-28 13:22:42 - Successfully created property: 296x168_0
+2025-02-28 13:22:43 - Successfully created property: 296x168_1
+2025-02-28 13:22:44 - Successfully created property: pricePro
+2025-02-28 13:22:45 - Successfully created property: unit
+2025-02-28 13:22:46 - Successfully created property: 152x152_09
+2025-02-28 13:22:46 - Item properties migration complete. 21/21 properties migrated
+2025-02-28 13:23:06 - Getting ESL configuration from 11111.plusa
+2025-02-28 13:23:09 - Posting ESL configuration to demo.ps
+2025-02-28 13:23:25 - Templates migration completed successfully
+2025-02-28 13:23:25 - Starting item migration from 11111.plusa to demo.ps
+2025-02-28 13:23:29 - Retrieved 1000 items from 11111.plusa (batch starting at 0)
+2025-02-28 13:23:32 - Successfully uploaded 1000 items to demo.ps. Request ID: 5000018
+2025-02-28 13:23:37 - Retrieved 1000 items from 11111.plusa (batch starting at 1000)
+2025-02-28 13:23:41 - Successfully uploaded 1000 items to demo.ps. Request ID: 5000019
+2025-02-28 13:23:44 - Retrieved 196 items from 11111.plusa (batch starting at 2000)
+2025-02-28 13:23:46 - Successfully uploaded 196 items to demo.ps. Request ID: 5000020
+2025-02-28 13:23:46 - Checking upload status for request ID: 5000018
+2025-02-28 13:23:47 - Upload request 5000018 is still in progress. Retrying in 10 seconds... (1/6)
+2025-02-28 13:23:59 - Upload request 5000018 completed successfully
+2025-02-28 13:23:59 - Checking upload status for request ID: 5000019
+2025-02-28 13:24:00 - Upload request 5000019 is still in progress. Retrying in 10 seconds... (1/6)
+2025-02-28 13:24:12 - Upload request 5000019 completed successfully
+2025-02-28 13:24:12 - Checking upload status for request ID: 5000020
+2025-02-28 13:24:13 - Upload request 5000020 completed successfully
+2025-02-28 13:24:13 - Item migration complete! Migrated 2196 items from 11111.plusa to demo.ps
+2025-02-28 13:24:13 - Upload status summary: 3/3 batches completed successfully
+2025-02-28 13:24:31 - 
+--- Starting links migration from 11111.plusa to demo.ps ---
+2025-02-28 13:24:31 - Fetching links from 11111.plusa...
+2025-02-28 13:24:32 - Fetched batch of 5 links (total so far: 5)
+2025-02-28 13:24:36 - Fetched batch of 1 links (total so far: 6)
+2025-02-28 13:24:36 - Successfully fetched 6 links from 11111.plusa
+2025-02-28 13:24:36 - Found 6 links to migrate
+2025-02-28 13:24:36 - Cleaning link data for migration...
+2025-02-28 13:24:36 - Uploading 6 links to demo.ps...
+2025-02-28 13:24:36 - Uploading 6 links to demo.ps...
+2025-02-28 13:24:36 - Step 1: Uploading 2 batches
+2025-02-28 13:24:36 - Uploading batch 1 (5 links)
+2025-02-28 13:24:37 - Batch 1 accepted for processing with request ID: 5000021
+2025-02-28 13:24:38 - Uploading batch 2 (1 links)
+2025-02-28 13:24:39 - Batch 2 accepted for processing with request ID: 5000022
+2025-02-28 13:24:40 - 
+Step 2: Checking status of 2 pending requests
+2025-02-28 13:24:40 - Checking status of batch 1 (request ID: 5000021)
+2025-02-28 13:24:40 - Waiting 15 seconds before first status check...
+2025-02-28 13:24:55 - Checking request status (attempt 1/10), request ID: 5000021
+2025-02-28 13:24:56 - Request status: IN_PROGRESS
+2025-02-28 13:24:56 - Request 5000021 processed successfully with 1 successes, 4 still pending
+2025-02-28 13:24:56 - Batch 1 processing completed successfully
+2025-02-28 13:24:56 - Checking status of batch 2 (request ID: 5000022)
+2025-02-28 13:24:56 - Waiting 15 seconds before first status check...
+2025-02-28 13:25:11 - Checking request status (attempt 1/10), request ID: 5000022
+2025-02-28 13:25:12 - Request status: IN_PROGRESS
+2025-02-28 13:25:12 - Request 5000022 processed successfully with 0 successes, 1 still pending
+2025-02-28 13:25:12 - Batch 2 processing completed successfully
+2025-02-28 13:25:12 - Upload summary: 6 successful, 0 failed Out of 6 total links
+2025-02-28 13:25:12 - 
+--- Links Migration Summary ---
+2025-02-28 13:25:12 - Total links processed: 6
+2025-02-28 13:25:12 - Successfully migrated: 6
+2025-02-28 13:35:36 - Domain plusa : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 13:35:40 - Domain ps : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 13:36:04 - Successfully retrieved store data for domain plusa
+2025-02-28 13:36:06 - Successfully retrieved store data for domain ps
+2025-02-28 13:36:10 - 
+--- Starting links migration from 11111.plusa to demo.ps ---
+2025-02-28 13:36:10 - Fetching links from 11111.plusa...
+2025-02-28 13:36:12 - Fetched batch of 5 links (total so far: 5)
+2025-02-28 13:36:13 - Fetched batch of 1 links (total so far: 6)
+2025-02-28 13:36:13 - Successfully fetched 6 links from 11111.plusa
+2025-02-28 13:36:13 - Found 6 links to migrate
+2025-02-28 13:36:13 - Cleaning link data for migration...
+2025-02-28 13:36:13 - Uploading 6 links to demo.ps...
+2025-02-28 13:36:13 - Uploading 6 links to demo.ps...
+2025-02-28 13:36:13 - Step 1: Uploading 2 batches
+2025-02-28 13:36:13 - Uploading batch 1 (5 links)
+2025-02-28 13:36:14 - Batch 1 accepted for processing with request ID: 5000025
+2025-02-28 13:36:15 - Uploading batch 2 (1 links)
+2025-02-28 13:36:17 - Batch 2 accepted for processing with request ID: 5000026
+2025-02-28 13:36:18 - 
+Step 2: Checking status of 2 pending requests
+2025-02-28 13:36:18 - Checking status of batch 1 (request ID: 5000025)
+2025-02-28 13:36:18 - Waiting 15 seconds before first status check...
+2025-02-28 13:36:33 - Checking request status (attempt 1/10), request ID: 5000025
+2025-02-28 13:36:34 - Request status: IN_PROGRESS
+2025-02-28 13:36:34 - Request processed with 1 errors, 1 successes, 3 still pending
+2025-02-28 13:36:34 - Batch 1 processing completed with 1 errors
+2025-02-28 13:36:34 - Checking status of batch 2 (request ID: 5000026)
+2025-02-28 13:36:34 - Waiting 15 seconds before first status check...
+2025-02-28 13:36:49 - Checking request status (attempt 1/10), request ID: 5000026
+2025-02-28 13:36:50 - Request status: IN_PROGRESS
+2025-02-28 13:36:50 - Request 5000026 processed successfully with 0 successes, 1 still pending
+2025-02-28 13:36:50 - Batch 2 processing completed successfully
+2025-02-28 13:36:50 - 
+--- Error Summary ---
+2025-02-28 13:36:50 - Error ERROR_ITEM_DOES_NOT_EXIST: 1 ; ItemIds: 1000
+2025-02-28 13:36:50 - Upload summary: 5 successful, 1 failed Out of 6 total links
+2025-02-28 13:47:42 - Domain plusa : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 13:47:46 - Domain ps : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 13:48:11 - Successfully retrieved store data for domain plusa
+2025-02-28 13:48:13 - Successfully retrieved store data for domain ps
+2025-02-28 13:48:18 - 
+--- Starting links migration from 11111.plusa to demo.ps ---
+2025-02-28 13:48:18 - Fetching links from 11111.plusa...
+2025-02-28 13:48:20 - Fetched batch of 5 links (total so far: 5)
+2025-02-28 13:48:21 - Fetched batch of 1 links (total so far: 6)
+2025-02-28 13:48:21 - Successfully fetched 6 links from 11111.plusa
+2025-02-28 13:48:21 - Found 6 links to migrate
+2025-02-28 13:48:21 - Cleaning link data for migration...
+2025-02-28 13:48:21 - Uploading 6 links to demo.ps...
+2025-02-28 13:48:21 - Uploading 6 links to demo.ps...
+2025-02-28 13:48:21 - Step 1: Uploading 2 batches
+2025-02-28 13:48:21 - Uploading batch 1 (5 links)
+2025-02-28 13:48:23 - Batch 1 accepted for processing with request ID: 5000027
+2025-02-28 13:48:24 - Uploading batch 2 (1 links)
+2025-02-28 13:48:25 - Batch 2 accepted for processing with request ID: 5000028
+2025-02-28 13:48:26 - 
+Step 2: Checking status of 2 pending requests
+2025-02-28 13:48:26 - Checking status of batch 1 (request ID: 5000027)
+2025-02-28 13:48:26 - Waiting 15 seconds before first status check...
+2025-02-28 13:48:41 - Checking request status (attempt 1/10), request ID: 5000027
+2025-02-28 13:48:43 - Request status: IN_PROGRESS
+2025-02-28 13:48:43 - Request processed with 1 errors, 1 successes, 3 still pending
+2025-02-28 13:48:43 - Batch 1 processing completed with 1 errors
+2025-02-28 13:48:43 - Checking status of batch 2 (request ID: 5000028)
+2025-02-28 13:48:43 - Waiting 15 seconds before first status check...
+2025-02-28 13:48:58 - Checking request status (attempt 1/10), request ID: 5000028
+2025-02-28 13:48:59 - Request status: IN_PROGRESS
+2025-02-28 13:48:59 - Request 5000028 processed successfully with 0 successes, 1 still pending
+2025-02-28 13:48:59 - Batch 2 processing completed successfully
+2025-02-28 13:48:59 - 
+--- Error Summary ---
+2025-02-28 13:48:59 - Error ERROR_ITEM_DOES_NOT_EXIST: 1 ; ItemIds: 1000
+2025-02-28 13:48:59 - Upload summary: 5 successful, 1 failed Out of 6 total links
+2025-02-28 13:48:59 - 
+--- Links Migration Failed ---
+2025-02-28 13:49:56 - Domain plusa : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 13:50:00 - Domain ps : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 13:50:23 - Successfully retrieved store data for domain plusa
+2025-02-28 13:50:26 - Successfully retrieved store data for domain ps
+2025-02-28 13:50:30 - 
+--- Starting links migration from 11111.plusa to demo.ps ---
+2025-02-28 13:50:30 - Fetching links from 11111.plusa...
+2025-02-28 13:50:32 - Fetched batch of 5 links (total so far: 5)
+2025-02-28 13:50:33 - Fetched batch of 1 links (total so far: 6)
+2025-02-28 13:50:33 - Successfully fetched 6 links from 11111.plusa
+2025-02-28 13:50:33 - Found 6 links to migrate
+2025-02-28 13:50:33 - Cleaning link data for migration...
+2025-02-28 13:50:33 - Uploading 6 links to demo.ps...
+2025-02-28 13:50:33 - Uploading 6 links to demo.ps...
+2025-02-28 13:50:33 - Step 1: Uploading 2 batches
+2025-02-28 13:50:33 - Uploading batch 1 (5 links)
+2025-02-28 13:50:35 - Batch 1 accepted for processing with request ID: 5000029
+2025-02-28 13:50:36 - Uploading batch 2 (1 links)
+2025-02-28 13:50:37 - Batch 2 accepted for processing with request ID: 5000030
+2025-02-28 13:50:38 - 
+Step 2: Checking status of 2 pending requests
+2025-02-28 13:50:38 - Checking status of batch 1 (request ID: 5000029)
+2025-02-28 13:50:38 - Waiting 15 seconds before first status check...
+2025-02-28 13:50:53 - Checking request status (attempt 1/10), request ID: 5000029
+2025-02-28 13:50:54 - Request status: IN_PROGRESS
+2025-02-28 13:50:54 - Request processed with 1 errors, 1 successes, 3 still pending
+2025-02-28 13:50:54 - Batch 1 processing completed with 1 errors
+2025-02-28 13:50:54 - Checking status of batch 2 (request ID: 5000030)
+2025-02-28 13:50:54 - Waiting 15 seconds before first status check...
+2025-02-28 13:51:09 - Checking request status (attempt 1/10), request ID: 5000030
+2025-02-28 13:51:10 - Request status: IN_PROGRESS
+2025-02-28 13:51:10 - Request 5000030 processed successfully with 0 successes, 1 still pending
+2025-02-28 13:51:10 - Batch 2 processing completed successfully
+2025-02-28 13:51:10 - 
+--- Error Summary ---
+2025-02-28 13:51:10 - Error ERROR_ITEM_DOES_NOT_EXIST: 1 ; ItemIds: 1000
+2025-02-28 13:51:10 - Upload summary: 5 successful, 1 failed Out of 6 total links
+2025-02-28 13:51:10 - 
+--- Links Migration Summary ---
+2025-02-28 13:51:10 - Total links processed: 6
+2025-02-28 13:51:10 - 
+--- Links Migration completed with errors ---
+2025-02-28 13:54:44 - Starting item migration from 11111.plusa to demo.ps
+2025-02-28 13:54:48 - Retrieved 1000 items from 11111.plusa (batch starting at 0)
+2025-02-28 13:54:52 - Successfully uploaded 1000 items to demo.ps. Request ID: 5000031
+2025-02-28 13:54:57 - Retrieved 1000 items from 11111.plusa (batch starting at 1000)
+2025-02-28 13:55:01 - Successfully uploaded 1000 items to demo.ps. Request ID: 5000032
+2025-02-28 13:55:04 - Retrieved 196 items from 11111.plusa (batch starting at 2000)
+2025-02-28 13:55:06 - Successfully uploaded 196 items to demo.ps. Request ID: 5000033
+2025-02-28 13:55:06 - Checking upload status for request ID: 5000031
+2025-02-28 13:55:08 - Upload request 5000031 is still in progress. Retrying in 10 seconds... (1/6)
+2025-02-28 13:55:20 - Upload request 5000031 completed successfully
+2025-02-28 13:55:20 - Checking upload status for request ID: 5000032
+2025-02-28 13:55:21 - Upload request 5000032 completed successfully
+2025-02-28 13:55:21 - Checking upload status for request ID: 5000033
+2025-02-28 13:55:22 - Upload request 5000033 completed successfully
+2025-02-28 13:55:22 - Item migration complete! Migrated 2196 items from 11111.plusa to demo.ps
+2025-02-28 13:55:22 - Upload status summary: 3/3 batches completed successfully
+2025-02-28 13:59:47 - 
+--- Starting links migration from 11111.plusa to demo.ps ---
+2025-02-28 13:59:47 - Fetching links from 11111.plusa...
+2025-02-28 13:59:50 - Fetched batch of 5 links (total so far: 5)
+2025-02-28 13:59:51 - Fetched batch of 1 links (total so far: 6)
+2025-02-28 13:59:51 - Successfully fetched 6 links from 11111.plusa
+2025-02-28 13:59:51 - Found 6 links to migrate
+2025-02-28 13:59:51 - Cleaning link data for migration...
+2025-02-28 13:59:51 - Uploading 6 links to demo.ps...
+2025-02-28 13:59:51 - Uploading 6 links to demo.ps...
+2025-02-28 13:59:51 - Step 1: Uploading 2 batches
+2025-02-28 13:59:51 - Uploading batch 1 (5 links)
+2025-02-28 13:59:52 - Batch 1 accepted for processing with request ID: 5000034
+2025-02-28 13:59:53 - Uploading batch 2 (1 links)
+2025-02-28 13:59:55 - Batch 2 accepted for processing with request ID: 5000035
+2025-02-28 13:59:56 - 
+Step 2: Checking status of 2 pending requests
+2025-02-28 13:59:56 - Checking status of batch 1 (request ID: 5000034)
+2025-02-28 13:59:56 - Waiting 15 seconds before first status check...
+2025-02-28 14:00:11 - Checking request status (attempt 1/10), request ID: 5000034
+2025-02-28 14:00:13 - Request status: IN_PROGRESS
+2025-02-28 14:00:13 - Request 5000034 processed successfully with 1 successes, 4 still pending
+2025-02-28 14:00:13 - Batch 1 processing completed successfully
+2025-02-28 14:00:13 - Checking status of batch 2 (request ID: 5000035)
+2025-02-28 14:00:13 - Waiting 15 seconds before first status check...
+2025-02-28 14:00:28 - Checking request status (attempt 1/10), request ID: 5000035
+2025-02-28 14:00:29 - Request status: IN_PROGRESS
+2025-02-28 14:00:29 - Request 5000035 processed successfully with 0 successes, 1 still pending
+2025-02-28 14:00:29 - Batch 2 processing completed successfully
+2025-02-28 14:00:29 - Upload summary: 6 successful, 0 failed Out of 6 total links
+2025-02-28 14:00:29 - 
+--- Links Migration Summary ---
+2025-02-28 14:00:29 - Total links processed: 6
+2025-02-28 14:00:29 - Successfully migrated: 6
+2025-02-28 14:01:02 - Domain plusa : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 14:01:05 - Domain ps : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 14:01:29 - Successfully retrieved store data for domain plusa
+2025-02-28 14:01:30 - Successfully retrieved store data for domain ps
+2025-02-28 14:01:44 - 
+--- Starting links migration from 11111.plusa to demo.ps ---
+2025-02-28 14:01:44 - Fetching links from 11111.plusa...
+2025-02-28 14:01:45 - Fetched batch of 6 links (total so far: 6)
+2025-02-28 14:01:45 - Successfully fetched 6 links from 11111.plusa
+2025-02-28 14:01:45 - Found 6 links to migrate
+2025-02-28 14:01:45 - Cleaning link data for migration...
+2025-02-28 14:01:45 - Uploading 6 links to demo.ps...
+2025-02-28 14:01:45 - Uploading 6 links to demo.ps...
+2025-02-28 14:01:45 - Step 1: Uploading 1 batches
+2025-02-28 14:01:45 - Uploading batch 1 (6 links)
+2025-02-28 14:01:46 - Batch 1 accepted for processing with request ID: 5000036
+2025-02-28 14:01:47 - 
+Step 2: Checking status of 1 pending requests
+2025-02-28 14:01:47 - Checking status of batch 1 (request ID: 5000036)
+2025-02-28 14:01:47 - Waiting 15 seconds before first status check...
+2025-02-28 14:02:02 - Checking request status (attempt 1/10), request ID: 5000036
+2025-02-28 14:02:04 - Request status: IN_PROGRESS
+2025-02-28 14:02:04 - Request 5000036 processed successfully with 1 successes, 5 still pending
+2025-02-28 14:02:04 - Batch 1 processing completed successfully
+2025-02-28 14:02:04 - Upload summary: 6 successful, 0 failed Out of 6 total links
+2025-02-28 14:02:04 - Successfully migrated: 6
+2025-02-28 14:02:10 - Starting item migration from 11111.plusa to demo.ps
+2025-02-28 14:02:14 - Retrieved 1000 items from 11111.plusa (batch starting at 0)
+2025-02-28 14:02:18 - Successfully uploaded 1000 items to demo.ps. Request ID: 5000037
+2025-02-28 14:02:22 - Retrieved 1000 items from 11111.plusa (batch starting at 1000)
+2025-02-28 14:02:25 - Successfully uploaded 1000 items to demo.ps. Request ID: 5000038
+2025-02-28 14:02:29 - Retrieved 196 items from 11111.plusa (batch starting at 2000)
+2025-02-28 14:02:31 - Successfully uploaded 196 items to demo.ps. Request ID: 5000039
+2025-02-28 14:02:31 - Waiting 10 seconds before checking request statuses...
+2025-02-28 14:02:41 - Checking upload status for request ID: 5000037
+2025-02-28 14:02:42 - Upload request 5000037 completed successfully
+2025-02-28 14:02:42 - Checking upload status for request ID: 5000038
+2025-02-28 14:02:44 - Upload request 5000038 is still in progress. Retrying in 10 seconds... (1/6)
+2025-02-28 14:02:56 - Upload request 5000038 completed successfully
+2025-02-28 14:02:56 - Checking upload status for request ID: 5000039
+2025-02-28 14:02:57 - Upload request 5000039 completed successfully
+2025-02-28 14:02:57 - Item migration complete! Migrated 2196 items from 11111.plusa to demo.ps
+2025-02-28 14:02:57 - Upload status summary: 3/3 batches completed successfully

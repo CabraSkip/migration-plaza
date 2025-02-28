@@ -459,8 +459,23 @@ def migrate_infrastructure(store1, store2, auth_token1, auth_token2, store_data=
             return False
             
         if not add_basestation_to_store(bs['hardwareId'], secret, store2, store_data):
-            write_log(f"Failed to pre-add basestation {bs['hardwareId']}, MIGRATION ABORTED", "red")
-            return False
+            # Add retry mechanism - attempt up to 3 times
+            retry_count = 0
+            max_retries = 3
+            success = False
+            
+            while retry_count < max_retries and not success:
+                retry_count += 1
+                write_log(f"Retrying to add basestation {bs['hardwareId']} (attempt {retry_count}/{max_retries})", "yellow")
+                time.sleep(10)  # 10 second delay between retries
+                success = add_basestation_to_store(bs['hardwareId'], secret, store2, store_data)
+                if success:
+                    write_log(f"Successfully added basestation {bs['hardwareId']} on retry {retry_count}", "green")
+                    break
+            
+            if not success:
+                write_log(f"Failed to pre-add basestation {bs['hardwareId']} after {max_retries} attempts, MIGRATION ABORTED", "red")
+                return False
             
         bs_secrets[bs['hardwareId']] = secret
         
