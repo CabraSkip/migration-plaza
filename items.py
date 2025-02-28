@@ -22,6 +22,37 @@ def get_item_batch(store, auth_token, start=0, limit=1000):
         write_log(f"Error fetching items from {store} (batch starting at {start}): {str(e)}", "red")
         return []
 
+def get_linked_item_batch(store, auth_token, start=0, limit=1000):
+    """Fetch a batch of linked items from the store"""
+    try:
+        response = requests.get(
+            f"https://{store}.pcm.pricer-plaza.com/api/private/core/v1/search?queryType=ITEM_BY_ID_OR_NAME_OR_LINKED_BARCODE&projection=M&page={start}&pageSize={limit}&sortDirection=ASC&filter%5Blinked%5D=true",
+            headers={
+                "accept": "application/json",
+                "Authorization": f"Bearer {auth_token}"
+            },
+            timeout=60  # Increased timeout for large payloads
+        )
+        response.raise_for_status()
+        # The API returns a different structure, we need to extract the content
+        result = response.json()
+        
+        # Check the type of result and handle accordingly
+        if isinstance(result, dict):
+            items = result.get("content", [])
+        elif isinstance(result, list):
+            # If result is already a list, use it directly
+            items = result
+        else:
+            items = []
+            write_log(f"Unexpected response format from {store} linked items API", "red")
+        
+        write_log(f"Retrieved {len(items)} linked items from {store} (batch starting at {start})", "green")
+        return items
+    except Exception as e:
+        write_log(f"Error fetching linked items from {store} (batch starting at {start}): {str(e)}", "red")
+        return []
+
 def upload_items(store, auth_token, items):
     """Upload a batch of items to the store"""
     if not items:
@@ -178,5 +209,69 @@ def migrate_items(store1, store2, auth_token1, auth_token2):
             success_count += 1
     
     write_log(f"Item migration complete! Migrated {total_items} items from {store1} to {store2}", "green")
+    write_log(f"Upload status summary: {success_count}/{len(request_ids)} batches completed successfully", "green" if success_count == len(request_ids) else "yellow")
+    return success_count == len(request_ids)
+
+def migrate_linked_items(store1, store2, auth_token1, auth_token2):
+    """Migrate linked items from store1 to store2"""
+    write_log(f"Starting linked item migration from {store1} to {store2}", "cyan")
+    total_items = 0
+    batch_size = 1000
+    request_ids = []
+    
+    # Process batches of items
+    start_index = 0
+    while True:
+        # Get a batch of linked items from source store
+        items = get_linked_item_batch(store1, auth_token1, start_index, batch_size)
+        
+        # Check if we've reached the end of the items
+        if not items:
+            break
+            
+        # Upload items to target store
+        response = requests.patch(
+            f"https://{store2}.pcm.pricer-plaza.com/api/public/core/v1/items",
+            headers={
+                "accept": "application/json",
+                "Authorization": f"Bearer {auth_token2}",
+                "Content-Type": "application/json"
+            },
+            json=items,
+            timeout=120
+        )
+        if response.status_code in [200, 201, 202]:
+            request_id = response.json().get("requestId")
+            request_ids.append(request_id)
+            write_log(f"Successfully uploaded {len(items)} linked items to {store2}. Request ID: {request_id}", "green")
+        else:
+            write_log(f"Failed to upload batch starting at index {start_index}. Status: {response.status_code}", "red")
+            return False
+            
+        total_items += len(items)
+        
+        # If we got less than the batch size, we've reached the end
+        if len(items) < batch_size:
+            break
+            
+        # Move to next batch
+        start_index += batch_size
+        
+        # Short pause to avoid overloading the API
+        time.sleep(1)
+    
+    # Add an initial wait before checking request statuses
+    if request_ids:
+        write_log(f"Waiting 15 seconds before checking request statuses...", "cyan")
+        time.sleep(15)
+    
+    # Now check all request IDs for status and errors
+    success_count = 0
+    for request_id in request_ids:
+        write_log(f"Checking upload status for request ID: {request_id}", "cyan")
+        if check_request_status(store2, auth_token2, request_id, max_retries=6, retry_interval=10):
+            success_count += 1
+    
+    write_log(f"Linked item migration complete! Migrated {total_items} linked items from {store1} to {store2}", "green")
     write_log(f"Upload status summary: {success_count}/{len(request_ids)} batches completed successfully", "green" if success_count == len(request_ids) else "yellow")
     return success_count == len(request_ids)

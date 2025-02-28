@@ -12798,3 +12798,418 @@ Step 2: Checking status of 1 pending requests
 2025-02-28 14:02:57 - Upload request 5000039 completed successfully
 2025-02-28 14:02:57 - Item migration complete! Migrated 2196 items from 11111.plusa to demo.ps
 2025-02-28 14:02:57 - Upload status summary: 3/3 batches completed successfully
+2025-02-28 20:15:07 - Domain plusa : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 20:15:11 - Domain ps : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 20:15:35 - Successfully retrieved store data for domain plusa
+2025-02-28 20:15:37 - Successfully retrieved store data for domain ps
+2025-02-28 20:16:56 - Domain plusa : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 20:16:59 - Domain ps : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 20:17:23 - Successfully retrieved store data for domain plusa
+2025-02-28 20:17:25 - Successfully retrieved store data for domain ps
+2025-02-28 20:17:35 - Migrating linked items from 11111.plusa to demo.ps...
+2025-02-28 20:17:35 - Starting linked item migration from 11111.plusa to demo.ps
+2025-02-28 20:17:36 - Error fetching linked items from 11111.plusa (batch starting at 0): 'list' object has no attribute 'get'
+2025-02-28 20:17:36 - Linked item migration complete! Migrated 0 linked items from 11111.plusa to demo.ps
+2025-02-28 20:17:36 - Upload status summary: 0/0 batches completed successfully
+2025-02-28 20:31:33 - Domain plusa : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 20:31:38 - Domain ps : token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 20:32:01 - Successfully retrieved store data for domain plusa
+2025-02-28 20:32:04 - Successfully retrieved store data for domain ps
+2025-02-28 20:32:13 - Migrating linked items from 11111.plusa to demo.ps...
+2025-02-28 20:32:13 - Starting linked item migration from 11111.plusa to demo.ps
+2025-02-28 20:32:14 - Retrieved 5 linked items from 11111.plusa (batch starting at 0)
+2025-02-28 20:32:15 - Successfully uploaded 5 linked items to demo.ps. Request ID: 6000002
+2025-02-28 20:32:15 - Waiting 15 seconds before checking request statuses...
+2025-02-28 20:32:30 - Checking upload status for request ID: 6000002
+2025-02-28 20:32:32 - Upload request 6000002 completed successfully
+2025-02-28 20:32:32 - Linked item migration complete! Migrated 5 linked items from 11111.plusa to demo.ps
+2025-02-28 20:32:32 - Upload status summary: 1/1 batches completed successfully
+2025-02-28 22:28:02 - Using chrome as default browser
+2025-02-28 22:28:05 - Killed chrome.exe process
+2025-02-28 22:28:05 - Killed chrome.exe process
+2025-02-28 22:28:05 - Killed chrome.exe process
+2025-02-28 22:28:05 - Killed chrome.exe process
+2025-02-28 22:28:05 - Killed chrome.exe process
+2025-02-28 22:28:05 - Killed chrome.exe process
+2025-02-28 22:28:06 - Killed chrome.exe process
+2025-02-28 22:28:06 - Killed chrome.exe process
+2025-02-28 22:28:06 - Killed chrome.exe process
+2025-02-28 22:28:18 - Domain plusa: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 22:28:23 - Domain ps: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 22:28:47 - Successfully retrieved store data for domain plusa
+2025-02-28 22:28:49 - Successfully retrieved store data for domain ps
+2025-02-28 22:29:09 - Using chrome as default browser
+2025-02-28 22:29:17 - Domain plusa: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 22:29:21 - Domain ps: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 22:29:45 - Successfully retrieved store data for domain plusa
+2025-02-28 22:29:47 - Successfully retrieved store data for domain ps
+2025-02-28 22:53:29 - Using chrome as default browser
+2025-02-28 22:53:36 - Error retrieving token from browser for domain plusa: Message: timeout
+from no such execution context: frame does not have execution context
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x010A0B43+25139]
+	(No symbol) [0x010313F4]
+	(No symbol) [0x00F104E3]
+	(No symbol) [0x00F050DD]
+	(No symbol) [0x00F15950]
+	(No symbol) [0x00F1900A]
+	(No symbol) [0x00F19087]
+	(No symbol) [0x00FA13AA]
+	(No symbol) [0x00FAE3A3]
+	(No symbol) [0x00FAE237]
+	(No symbol) [0x00F7CFCC]
+	(No symbol) [0x00F9E778]
+	(No symbol) [0x00F7CDC6]
+	(No symbol) [0x00F4BDE9]
+	(No symbol) [0x00F4D124]
+	GetHandleVerifier [0x013A4373+3185251]
+	GetHandleVerifier [0x013C291A+3309578]
+	GetHandleVerifier [0x013BCF42+3286578]
+	GetHandleVerifier [0x01137AE0+643536]
+	(No symbol) [0x0103A20D]
+	(No symbol) [0x010370B8]
+	(No symbol) [0x01037257]
+	(No symbol) [0x01029E00]
+	BaseThreadInitThunk [0x76AD7BA9+25]
+	RtlInitializeExceptionChain [0x77DDBD2B+107]
+	RtlClearBits [0x77DDBCAF+191]
+
+2025-02-28 22:53:39 - Error retrieving token from browser for domain ps: Message: timeout
+from no such execution context: frame does not have execution context
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x010A0B43+25139]
+	(No symbol) [0x010313F4]
+	(No symbol) [0x00F104E3]
+	(No symbol) [0x00F050DD]
+	(No symbol) [0x00F15950]
+	(No symbol) [0x00F1900A]
+	(No symbol) [0x00F19087]
+	(No symbol) [0x00FA13AA]
+	(No symbol) [0x00FAE3A3]
+	(No symbol) [0x00FAE237]
+	(No symbol) [0x00F7CFCC]
+	(No symbol) [0x00F9E778]
+	(No symbol) [0x00F7CDC6]
+	(No symbol) [0x00F4BDE9]
+	(No symbol) [0x00F4D124]
+	GetHandleVerifier [0x013A4373+3185251]
+	GetHandleVerifier [0x013C291A+3309578]
+	GetHandleVerifier [0x013BCF42+3286578]
+	GetHandleVerifier [0x01137AE0+643536]
+	(No symbol) [0x0103A20D]
+	(No symbol) [0x010370B8]
+	(No symbol) [0x01037257]
+	(No symbol) [0x01029E00]
+	BaseThreadInitThunk [0x76AD7BA9+25]
+	RtlInitializeExceptionChain [0x77DDBD2B+107]
+	RtlClearBits [0x77DDBCAF+191]
+
+2025-02-28 22:53:39 - Please enter auth token for domain plusa:
+2025-02-28 22:54:09 - Using chrome as default browser
+2025-02-28 22:54:16 - Error retrieving token from browser for domain plusa: Message: timeout
+from no such execution context: frame does not have execution context
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x010A0B43+25139]
+	(No symbol) [0x010313F4]
+	(No symbol) [0x00F104E3]
+	(No symbol) [0x00F050DD]
+	(No symbol) [0x00F15950]
+	(No symbol) [0x00F1900A]
+	(No symbol) [0x00F19087]
+	(No symbol) [0x00FA13AA]
+	(No symbol) [0x00FAE3A3]
+	(No symbol) [0x00FAE237]
+	(No symbol) [0x00F7CFCC]
+	(No symbol) [0x00F9E778]
+	(No symbol) [0x00F7CDC6]
+	(No symbol) [0x00F4BDE9]
+	(No symbol) [0x00F4D124]
+	GetHandleVerifier [0x013A4373+3185251]
+	GetHandleVerifier [0x013C291A+3309578]
+	GetHandleVerifier [0x013BCF42+3286578]
+	GetHandleVerifier [0x01137AE0+643536]
+	(No symbol) [0x0103A20D]
+	(No symbol) [0x010370B8]
+	(No symbol) [0x01037257]
+	(No symbol) [0x01029E00]
+	BaseThreadInitThunk [0x76AD7BA9+25]
+	RtlInitializeExceptionChain [0x77DDBD2B+107]
+	RtlClearBits [0x77DDBCAF+191]
+
+2025-02-28 22:54:19 - Error retrieving token from browser for domain ps: Message: timeout
+from no such execution context: frame does not have execution context
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x010A0B43+25139]
+	(No symbol) [0x010313F4]
+	(No symbol) [0x00F104E3]
+	(No symbol) [0x00F050DD]
+	(No symbol) [0x00F15950]
+	(No symbol) [0x00F1900A]
+	(No symbol) [0x00F19087]
+	(No symbol) [0x00FA13AA]
+	(No symbol) [0x00FAE3A3]
+	(No symbol) [0x00FAE237]
+	(No symbol) [0x00F7CFCC]
+	(No symbol) [0x00F9E778]
+	(No symbol) [0x00F7CDC6]
+	(No symbol) [0x00F4BDE9]
+	(No symbol) [0x00F4D124]
+	GetHandleVerifier [0x013A4373+3185251]
+	GetHandleVerifier [0x013C291A+3309578]
+	GetHandleVerifier [0x013BCF42+3286578]
+	GetHandleVerifier [0x01137AE0+643536]
+	(No symbol) [0x0103A20D]
+	(No symbol) [0x010370B8]
+	(No symbol) [0x01037257]
+	(No symbol) [0x01029E00]
+	BaseThreadInitThunk [0x76AD7BA9+25]
+	RtlInitializeExceptionChain [0x77DDBD2B+107]
+	RtlClearBits [0x77DDBCAF+191]
+
+2025-02-28 22:54:19 - Please enter auth token for domain plusa:
+2025-02-28 22:54:31 - Please enter auth token for domain ps:
+2025-02-28 22:54:51 - Using chrome as default browser
+2025-02-28 22:54:57 - Error retrieving token from browser for domain plusa: Message: timeout
+from no such execution context: frame does not have execution context
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x010A0B43+25139]
+	(No symbol) [0x010313F4]
+	(No symbol) [0x00F104E3]
+	(No symbol) [0x00F050DD]
+	(No symbol) [0x00F15950]
+	(No symbol) [0x00F1900A]
+	(No symbol) [0x00F19087]
+	(No symbol) [0x00FA13AA]
+	(No symbol) [0x00FAE3A3]
+	(No symbol) [0x00FAE237]
+	(No symbol) [0x00F7CFCC]
+	(No symbol) [0x00F9E778]
+	(No symbol) [0x00F7CDC6]
+	(No symbol) [0x00F4BDE9]
+	(No symbol) [0x00F4D124]
+	GetHandleVerifier [0x013A4373+3185251]
+	GetHandleVerifier [0x013C291A+3309578]
+	GetHandleVerifier [0x013BCF42+3286578]
+	GetHandleVerifier [0x01137AE0+643536]
+	(No symbol) [0x0103A20D]
+	(No symbol) [0x010370B8]
+	(No symbol) [0x01037257]
+	(No symbol) [0x01029E00]
+	BaseThreadInitThunk [0x76AD7BA9+25]
+	RtlInitializeExceptionChain [0x77DDBD2B+107]
+	RtlClearBits [0x77DDBCAF+191]
+
+2025-02-28 22:55:01 - Error retrieving token from browser for domain ps: Message: timeout
+from no such execution context: frame does not have execution context
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x010A0B43+25139]
+	(No symbol) [0x010313F4]
+	(No symbol) [0x00F104E3]
+	(No symbol) [0x00F050DD]
+	(No symbol) [0x00F15950]
+	(No symbol) [0x00F1900A]
+	(No symbol) [0x00F19087]
+	(No symbol) [0x00FA13AA]
+	(No symbol) [0x00FAE3A3]
+	(No symbol) [0x00FAE237]
+	(No symbol) [0x00F7CFCC]
+	(No symbol) [0x00F9E778]
+	(No symbol) [0x00F7CDC6]
+	(No symbol) [0x00F4BDE9]
+	(No symbol) [0x00F4D124]
+	GetHandleVerifier [0x013A4373+3185251]
+	GetHandleVerifier [0x013C291A+3309578]
+	GetHandleVerifier [0x013BCF42+3286578]
+	GetHandleVerifier [0x01137AE0+643536]
+	(No symbol) [0x0103A20D]
+	(No symbol) [0x010370B8]
+	(No symbol) [0x01037257]
+	(No symbol) [0x01029E00]
+	BaseThreadInitThunk [0x76AD7BA9+25]
+	RtlInitializeExceptionChain [0x77DDBD2B+107]
+	RtlClearBits [0x77DDBCAF+191]
+
+2025-02-28 22:55:01 - Please enter auth token for domain plusa:
+2025-02-28 22:55:52 - Using chrome as default browser
+2025-02-28 22:56:04 - Domain plusa: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 22:56:09 - Domain ps: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 22:56:34 - Successfully retrieved store data for domain plusa
+2025-02-28 22:56:35 - Successfully retrieved store data for domain ps
+2025-02-28 22:56:58 - Using chrome as default browser
+2025-02-28 22:57:04 - Domain plusa: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 22:57:08 - Domain ps: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 22:57:32 - Successfully retrieved store data for domain plusa
+2025-02-28 22:57:34 - Successfully retrieved store data for domain ps
+2025-02-28 22:58:53 - Using chrome as default browser
+2025-02-28 22:59:00 - Domain plusa: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 22:59:04 - Domain ps: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 22:59:28 - Successfully retrieved store data for domain plusa
+2025-02-28 22:59:29 - Successfully retrieved store data for domain ps
+2025-02-28 23:00:20 - Using chrome as default browser
+2025-02-28 23:00:29 - Domain plusa: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:00:34 - Domain ps: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:00:57 - Successfully retrieved store data for domain plusa
+2025-02-28 23:00:59 - Successfully retrieved store data for domain ps
+2025-02-28 23:04:30 - Using chrome as default browser
+2025-02-28 23:04:33 - Loading plusa to retrieve token...
+2025-02-28 23:04:36 - Error retrieving token from browser for domain plusa: module 'selenium.webdriver.support.expected_conditions' has no attribute 'presence_of_element_tag_name'
+2025-02-28 23:04:37 - Loading ps to retrieve token...
+2025-02-28 23:04:40 - Error retrieving token from browser for domain ps: module 'selenium.webdriver.support.expected_conditions' has no attribute 'presence_of_element_tag_name'
+2025-02-28 23:04:40 - Please enter auth token for domain plusa:
+2025-02-28 23:06:41 - Using chrome as default browser
+2025-02-28 23:06:52 - Loading plusa to retrieve token...
+2025-02-28 23:06:54 - Domain plusa: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:06:56 - Loading ps to retrieve token...
+2025-02-28 23:06:57 - Domain ps: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:07:20 - Fetching store data for both domains...
+2025-02-28 23:07:20 - Fetching store data for domain plusa...
+2025-02-28 23:07:20 - Fetching store data for domain ps...
+2025-02-28 23:07:21 - Successfully retrieved store data for domain plusa
+2025-02-28 23:07:22 - Successfully retrieved store data for domain ps
+2025-02-28 23:15:02 - Using chrome as default browser
+2025-02-28 23:15:05 - Loading plusa to retrieve token...
+2025-02-28 23:15:09 - Domain plusa: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:15:10 - Loading ps to retrieve token...
+2025-02-28 23:15:13 - Domain ps: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:15:15 - Starting token data fetch...
+2025-02-28 23:15:15 - Fetching store data for domain plusa...
+2025-02-28 23:15:15 - Fetching store data for domain ps...
+2025-02-28 23:15:17 - Successfully retrieved store data for domain plusa
+2025-02-28 23:15:19 - Successfully retrieved store data for domain ps
+2025-02-28 23:15:36 - Browser session closed in background
+2025-02-28 23:19:15 - Detecting default browser...
+2025-02-28 23:19:15 - Using chrome as default browser
+2025-02-28 23:19:24 - Using chrome as default browser
+2025-02-28 23:19:33 - Loading plusa to retrieve token...
+2025-02-28 23:19:35 - Domain plusa: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:19:36 - Loading ps to retrieve token...
+2025-02-28 23:19:38 - Domain ps: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:19:40 - Starting token data fetch...
+2025-02-28 23:19:40 - Fetching store data for domain ps...
+.
+2025-02-28 23:19:41 - Successfully retrieved store data for domain plusa
+2025-02-28 23:19:42 - Successfully retrieved store data for domain ps
+2025-02-28 23:20:01 - Browser session closed in background
+2025-02-28 23:22:25 - Detecting default browser...
+2025-02-28 23:22:25 - Using chrome as default browser
+2025-02-28 23:22:38 - Unexpected error in browser token retrieval: ChromeDriverManager.__init__() got an unexpected keyword argument 'cache_valid_range'
+2025-02-28 23:23:00 - Unexpected error in browser token retrieval: ChromeDriverManager.__init__() got an unexpected keyword argument 'cache_valid_range'
+2025-02-28 23:26:34 - Detecting default browser...
+2025-02-28 23:26:34 - Using chrome as default browser
+2025-02-28 23:26:47 - Loading plusa to retrieve token...
+2025-02-28 23:26:50 - Domain plusa: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:26:51 - Loading ps to retrieve token...
+2025-02-28 23:26:52 - Domain ps: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:26:54 - Starting token data fetch...
+2025-02-28 23:26:54 - Fetching store data for domain ps...
+.
+2025-02-28 23:26:55 - Successfully retrieved store data for domain plusa
+2025-02-28 23:26:56 - Successfully retrieved store data for domain ps
+2025-02-28 23:27:14 - Browser session closed in background
+2025-02-28 23:27:26 - Detecting default browser...
+2025-02-28 23:27:26 - Using chrome as default browser
+2025-02-28 23:27:42 - Loading plusa to retrieve token...
+2025-02-28 23:27:45 - Domain plusa: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:27:46 - Loading ps to retrieve token...
+2025-02-28 23:27:47 - Domain ps: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:27:49 - Starting token data fetch...
+2025-02-28 23:27:50 - Fetching store data for domain plusa...
+2025-02-28 23:27:50 - Fetching store data for domain ps...
+2025-02-28 23:27:50 - Successfully retrieved store data for domain plusa
+2025-02-28 23:27:51 - Successfully retrieved store data for domain ps
+2025-02-28 23:28:10 - Browser session closed in background
+2025-02-28 23:31:47 - Detecting default browser...
+2025-02-28 23:31:47 - Using chrome as default browser
+2025-02-28 23:31:51 - Loading plusa to retrieve token...
+2025-02-28 23:31:54 - Domain plusa: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:31:55 - Loading ps to retrieve token...
+2025-02-28 23:31:57 - Domain ps: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:31:59 - Starting token data fetch...
+2025-02-28 23:31:59 - Fetching store data for domain plusa...
+2025-02-28 23:31:59 - Fetching store data for domain ps...
+2025-02-28 23:32:00 - Successfully retrieved store data for domain plusa
+2025-02-28 23:32:00 - Successfully retrieved store data for domain ps
+2025-02-28 23:32:11 - Detecting default browser...
+2025-02-28 23:32:11 - Using chrome as default browser
+2025-02-28 23:32:44 - Loading plusa to retrieve token...
+2025-02-28 23:32:46 - Domain plusa: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:32:47 - Loading ps to retrieve token...
+2025-02-28 23:32:49 - Domain ps: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:32:51 - Starting token data fetch...
+2025-02-28 23:32:51 - Fetching store data for domain plusa...
+2025-02-28 23:32:51 - Fetching store data for domain ps...
+2025-02-28 23:32:52 - Successfully retrieved store data for domain plusa
+2025-02-28 23:32:53 - Successfully retrieved store data for domain ps
+2025-02-28 23:33:07 - Detecting default browser...
+2025-02-28 23:33:07 - Using chrome as default browser
+2025-02-28 23:33:23 - Loading plusa to retrieve token...
+2025-02-28 23:33:25 - Domain plusa: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:33:26 - Loading ps to retrieve token...
+2025-02-28 23:33:29 - Domain ps: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:33:31 - Starting token data fetch...
+2025-02-28 23:33:31 - Fetching store data for domain ps...
+.
+2025-02-28 23:33:32 - Successfully retrieved store data for domain plusa
+2025-02-28 23:33:32 - Successfully retrieved store data for domain ps
+2025-02-28 23:33:51 - Browser session closed in background
+2025-02-28 23:39:27 - Detecting default browser...
+2025-02-28 23:39:27 - Using chrome as default browser
+2025-02-28 23:39:32 - Checking domain and store availability...
+2025-02-28 23:39:38 - Loading plusa to retrieve token...
+2025-02-28 23:39:41 - Domain plusa: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:39:42 - Loading ps to retrieve token...
+2025-02-28 23:39:45 - Domain ps: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:39:47 - Starting token data fetch...
+2025-02-28 23:39:47 - Fetching store data for domain plusa...
+2025-02-28 23:39:47 - Fetching store data for domain ps...
+2025-02-28 23:39:48 - Successfully retrieved store data for domain plusa
+2025-02-28 23:39:49 - Successfully retrieved store data for domain ps
+2025-02-28 23:40:07 - Browser session closed in background
+2025-02-28 23:45:22 - Detecting default browser...
+2025-02-28 23:45:22 - Using chrome as default browser
+2025-02-28 23:45:25 - Checking domain and store availability...
+2025-02-28 23:45:36 - Loading plusa to retrieve token...
+2025-02-28 23:45:39 - Domain plusa: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:45:40 - Loading ps to retrieve token...
+2025-02-28 23:45:42 - Domain ps: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:45:44 - Closing browser session in background...
+2025-02-28 23:45:44 - Fetching store data for domain plusa...
+2025-02-28 23:45:44 - Fetching store data for domain ps...
+2025-02-28 23:45:45 - Successfully retrieved store data for domain plusa
+2025-02-28 23:45:45 - Successfully retrieved store data for domain ps
+2025-02-28 23:46:04 - Browser session closed in background
+2025-02-28 23:48:15 - Detecting default browser...
+2025-02-28 23:48:15 - Using chrome as default browser
+2025-02-28 23:48:18 - Checking domain and store availability...
+2025-02-28 23:48:29 - Loading plusa to retrieve token...
+2025-02-28 23:48:30 - Domain plusa: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:48:31 - Loading ps to retrieve token...
+2025-02-28 23:48:34 - Domain ps: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:48:37 - Fetching store data for domain plusa...
+2025-02-28 23:48:37 - Fetching store data for domain ps...
+2025-02-28 23:48:37 - Successfully retrieved store data for domain plusa
+2025-02-28 23:48:38 - Successfully retrieved store data for domain ps
+2025-02-28 23:53:58 - Detecting default browser...
+2025-02-28 23:53:58 - Using chrome as default browser
+2025-02-28 23:54:15 - Detecting default browser...
+2025-02-28 23:54:15 - Using chrome as default browser
+2025-02-28 23:54:19 - Checking domain and store availability...
+2025-02-28 23:54:22 - Killed chrome.exe process
+2025-02-28 23:54:22 - Killed chrome.exe process
+2025-02-28 23:54:23 - Killed chrome.exe process
+2025-02-28 23:54:23 - Killed chrome.exe process
+2025-02-28 23:54:23 - Killed chrome.exe process
+2025-02-28 23:54:30 - Loading plusa to retrieve token...
+2025-02-28 23:54:32 - Domain plusa: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:54:33 - Loading ps to retrieve token...
+2025-02-28 23:54:35 - Domain ps: token found: eyJhbGciOiJFUzI1NiJ9...
+2025-02-28 23:54:35 - Fetching store data for domain ps...
+.
+2025-02-28 23:54:36 - Successfully retrieved store data for domain plusa
+2025-02-28 23:54:37 - Successfully retrieved store data for domain ps
