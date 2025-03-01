@@ -1,4 +1,5 @@
 from common import write_log
+from endpoint_handler import endpoint_handler
 import requests
 import time
 import json
@@ -6,14 +7,22 @@ import json
 def get_item_batch(store, auth_token, start=0, limit=1000):
     """Fetch a batch of items from the store"""
     try:
-        response = requests.get(
-            f"https://{store}.pcm.pricer-plaza.com/api/public/core/v1/items?projection=M&start={start}&limit={limit}",
-            headers={
-                "accept": "application/json",
-                "Authorization": f"Bearer {auth_token}"
-            },
-            timeout=60  # Increased timeout for large payloads
-        )
+        # Check if this is an onprem store
+        is_onprem = not "." in store or ":" in store
+        
+        if is_onprem:
+            url = endpoint_handler.get_full_url("store1", f"/api/public/core/v1/items?projection=M&start={start}&limit={limit}")
+            headers = endpoint_handler.get_headers("store1")
+            response = requests.get(url, headers=headers, timeout=60)
+        else:
+            response = requests.get(
+                f"https://{store}.pcm.pricer-plaza.com/api/public/core/v1/items?projection=M&start={start}&limit={limit}",
+                headers={
+                    "accept": "application/json",
+                    "Authorization": f"Bearer {auth_token}"
+                },
+                timeout=60  # Increased timeout for large payloads
+            )
         response.raise_for_status()
         items = response.json()
         write_log(f"Retrieved {len(items)} items from {store} (batch starting at {start})", "green")
@@ -25,14 +34,22 @@ def get_item_batch(store, auth_token, start=0, limit=1000):
 def get_linked_item_batch(store, auth_token, start=0, limit=1000):
     """Fetch a batch of linked items from the store"""
     try:
-        response = requests.get(
-            f"https://{store}.pcm.pricer-plaza.com/api/private/core/v1/search?queryType=ITEM_BY_ID_OR_NAME_OR_LINKED_BARCODE&projection=M&page={start}&pageSize={limit}&sortDirection=ASC&filter%5Blinked%5D=true",
-            headers={
-                "accept": "application/json",
-                "Authorization": f"Bearer {auth_token}"
-            },
-            timeout=60  # Increased timeout for large payloads
-        )
+        # Check if this is an onprem store
+        is_onprem = not "." in store or ":" in store
+        
+        if is_onprem:
+            url = endpoint_handler.get_full_url("store1", f"/api/private/core/v1/search?queryType=ITEM_BY_ID_OR_NAME_OR_LINKED_BARCODE&projection=M&page={start}&pageSize={limit}&sortDirection=ASC&filter%5Blinked%5D=true")
+            headers = endpoint_handler.get_headers("store1")
+            response = requests.get(url, headers=headers, timeout=60)
+        else:
+            response = requests.get(
+                f"https://{store}.pcm.pricer-plaza.com/api/private/core/v1/search?queryType=ITEM_BY_ID_OR_NAME_OR_LINKED_BARCODE&projection=M&page={start}&pageSize={limit}&sortDirection=ASC&filter%5Blinked%5D=true",
+                headers={
+                    "accept": "application/json",
+                    "Authorization": f"Bearer {auth_token}"
+                },
+                timeout=60  # Increased timeout for large payloads
+            )
         response.raise_for_status()
         # The API returns a different structure, we need to extract the content
         result = response.json()
@@ -60,16 +77,24 @@ def upload_items(store, auth_token, items):
         return True
 
     try:
-        response = requests.patch(
-            f"https://{store}.pcm.pricer-plaza.com/api/public/core/v1/items",
-            headers={
-                "accept": "application/json",
-                "Authorization": f"Bearer {auth_token}",
-                "Content-Type": "application/json"
-            },
-            json=items,
-            timeout=60  # Increased timeout for large uploads
-        )
+        # Check if this is an onprem store
+        is_onprem = not "." in store or ":" in store
+        
+        if is_onprem:
+            url = endpoint_handler.get_full_url("store1", "/api/public/core/v1/items")
+            headers = endpoint_handler.get_headers("store1")
+            response = requests.patch(url, headers=headers, json=items, timeout=60)
+        else:
+            response = requests.patch(
+                f"https://{store}.pcm.pricer-plaza.com/api/public/core/v1/items",
+                headers={
+                    "accept": "application/json",
+                    "Authorization": f"Bearer {auth_token}",
+                    "Content-Type": "application/json"
+                },
+                json=items,
+                timeout=60  # Increased timeout for large uploads
+            )
         response.raise_for_status()
         request_id = response.json().get("requestId")
         write_log(f"Successfully uploaded {len(items)} items to {store}. Request ID: {request_id}", "green")
@@ -85,13 +110,21 @@ def check_request_status(store, auth_token, request_id, max_retries=6, retry_int
     
     while retries <= max_retries:
         try:
-            response = requests.get(
-                f"https://{store}.pcm.pricer-plaza.com/api/public/core/v1/items-result/{request_id}?excludeItemResults=false&excludeItemErrorCount=false",
-                headers={
-                    "accept": "application/json",
-                    "Authorization": f"Bearer {auth_token}"
-                }
-            )
+            # Check if this is an onprem store
+            is_onprem = not "." in store or ":" in store
+            
+            if is_onprem:
+                url = endpoint_handler.get_full_url("store1", f"/api/public/core/v1/items-result/{request_id}?excludeItemResults=false&excludeItemErrorCount=false")
+                headers = endpoint_handler.get_headers("store1")
+                response = requests.get(url, headers=headers)
+            else:
+                response = requests.get(
+                    f"https://{store}.pcm.pricer-plaza.com/api/public/core/v1/items-result/{request_id}?excludeItemResults=false&excludeItemErrorCount=false",
+                    headers={
+                        "accept": "application/json",
+                        "Authorization": f"Bearer {auth_token}"
+                    }
+                )
             response.raise_for_status()
             result = response.json()
             status = result.get("status")
@@ -165,17 +198,24 @@ def migrate_items(store1, store2, auth_token1, auth_token2):
         if not items:
             break
             
-        # Upload items to target store
-        response = requests.patch(
-            f"https://{store2}.pcm.pricer-plaza.com/api/public/core/v1/items",
-            headers={
-                "accept": "application/json",
-                "Authorization": f"Bearer {auth_token2}",
-                "Content-Type": "application/json"
-            },
-            json=items,
-            timeout=120
-        )
+        # Check if this is an onprem store
+        is_onprem = not "." in store2 or ":" in store2
+        
+        if is_onprem:
+            url = endpoint_handler.get_full_url("store2", "/api/public/core/v1/items")
+            headers = endpoint_handler.get_headers("store2")
+            response = requests.patch(url, headers=headers, json=items, timeout=120)
+        else:
+            response = requests.patch(
+                f"https://{store2}.pcm.pricer-plaza.com/api/public/core/v1/items",
+                headers={
+                    "accept": "application/json",
+                    "Authorization": f"Bearer {auth_token2}",
+                    "Content-Type": "application/json"
+                },
+                json=items,
+                timeout=120
+            )
         if response.status_code in [200, 201, 202]:
             request_id = response.json().get("requestId")
             request_ids.append(request_id)
@@ -229,17 +269,24 @@ def migrate_linked_items(store1, store2, auth_token1, auth_token2):
         if not items:
             break
             
-        # Upload items to target store
-        response = requests.patch(
-            f"https://{store2}.pcm.pricer-plaza.com/api/public/core/v1/items",
-            headers={
-                "accept": "application/json",
-                "Authorization": f"Bearer {auth_token2}",
-                "Content-Type": "application/json"
-            },
-            json=items,
-            timeout=120
-        )
+        # Check if this is an onprem store
+        is_onprem = not "." in store2 or ":" in store2
+        
+        if is_onprem:
+            url = endpoint_handler.get_full_url("store2", "/api/public/core/v1/items")
+            headers = endpoint_handler.get_headers("store2")
+            response = requests.patch(url, headers=headers, json=items, timeout=120)
+        else:
+            response = requests.patch(
+                f"https://{store2}.pcm.pricer-plaza.com/api/public/core/v1/items",
+                headers={
+                    "accept": "application/json",
+                    "Authorization": f"Bearer {auth_token2}",
+                    "Content-Type": "application/json"
+                },
+                json=items,
+                timeout=120
+            )
         if response.status_code in [200, 201, 202]:
             request_id = response.json().get("requestId")
             request_ids.append(request_id)

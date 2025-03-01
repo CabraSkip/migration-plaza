@@ -4,6 +4,7 @@ import time
 from common import write_log
 from tqdm import tqdm
 from collections import defaultdict
+from endpoint_handler import endpoint_handler
 
 def get_links(store, auth_token, batch_size=20000):
     """
@@ -15,14 +16,21 @@ def get_links(store, auth_token, batch_size=20000):
     start = 0
     
     try:
+        # Check if this is an onprem store
+        is_onprem = not "." in store or ":" in store
+        
         while True:
-            url = f"https://{store}.pcm.pricer-plaza.com/api/public/core/v1/labels?projection=M&start={start}&limit={batch_size}&serializeDatesToIso8601=true"
-            headers = {
-                "accept": "application/json",
-                "Authorization": f"Bearer {auth_token}"
-            }
-            
-            response = requests.get(url, headers=headers)
+            if is_onprem:
+                url = endpoint_handler.get_full_url("store1", f"/api/public/core/v1/labels?projection=M&start={start}&limit={batch_size}&serializeDatesToIso8601=true")
+                headers = endpoint_handler.get_headers("store1")
+                response = requests.get(url, headers=headers)
+            else:
+                url = f"https://{store}.pcm.pricer-plaza.com/api/public/core/v1/labels?projection=M&start={start}&limit={batch_size}&serializeDatesToIso8601=true"
+                headers = {
+                    "accept": "application/json",
+                    "Authorization": f"Bearer {auth_token}"
+                }
+                response = requests.get(url, headers=headers)
             
             if response.status_code != 200:
                 write_log(f"Failed to get links: {response.status_code} - {response.text}", "red")
@@ -55,11 +63,18 @@ def check_request_status(store, auth_token, request_id, max_attempts=10, wait_ti
     Returns a tuple (success, error_summary)
     Treats IN_PROGRESS as COMPLETED and ignores PENDING items in results.
     """
-    url = f"https://{store}.pcm.pricer-plaza.com/api/public/core/v1/labels-result/{request_id}"
-    headers = {
-        "accept": "application/json",
-        "Authorization": f"Bearer {auth_token}"
-    }
+    # Check if this is an onprem store
+    is_onprem = not "." in store or ":" in store
+
+    if is_onprem:
+        url = endpoint_handler.get_full_url("store1", f"/api/public/core/v1/labels-result/{request_id}")
+        headers = endpoint_handler.get_headers("store1")
+    else:
+        url = f"https://{store}.pcm.pricer-plaza.com/api/public/core/v1/labels-result/{request_id}"
+        headers = {
+            "accept": "application/json",
+            "Authorization": f"Bearer {auth_token}"
+        }
     
     # Store detailed error information
     error_summary = defaultdict(list)
@@ -147,12 +162,19 @@ def upload_links(store, auth_token, links_data, batch_size=20000):
     write_log(f"Uploading {len(links_data)} links to {store}...", "cyan")
     
     try:
-        url = f"https://{store}.pcm.pricer-plaza.com/api/public/core/v1/labels"
-        headers = {
-            "accept": "application/json",
-            "Content-Type": "application/json",
-            "Authorization": f"Bearer {auth_token}"
-        }
+        # Check if this is an onprem store
+        is_onprem = not "." in store or ":" in store
+
+        if is_onprem:
+            url = endpoint_handler.get_full_url("store1", "/api/public/core/v1/labels")
+            headers = endpoint_handler.get_headers("store1")
+        else:
+            url = f"https://{store}.pcm.pricer-plaza.com/api/public/core/v1/labels"
+            headers = {
+                "accept": "application/json",
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {auth_token}"
+            }
         
         # Process in batches
         total_links = len(links_data)

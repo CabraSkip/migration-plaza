@@ -1,4 +1,5 @@
 from common import write_log
+from endpoint_handler import endpoint_handler
 import requests
 import json
 from datetime import datetime, timedelta
@@ -46,7 +47,6 @@ def get_bs_secret(hardware_id, bs_list_file="DuplicateInfra_BS&secret_list.txt")
                                 write_log(f"Found secret for basestation {hardware_id}", "green")
                                 return secret.strip()
                         except ValueError:
-                            # Invalid format, continue to next part
                             continue
     except Exception as e:
         write_log(f"Error reading secret file: {str(e)}", "red")
@@ -60,25 +60,39 @@ def get_bs_secret(hardware_id, bs_list_file="DuplicateInfra_BS&secret_list.txt")
     return None
 
 def get_basestations(store, auth_token):
-    response = requests.get(
-        f"https://{store}.pcm.pricer-plaza.com/api/public/infra/v1/basestations",
-        headers={
-            "accept": "*/*",
-            "Authorization": f"Bearer {auth_token}",
-            "Content-Type": "application/json"
-        }
-    )
+    is_onprem = not "." in store or ":" in store
+    
+    if is_onprem:
+        url = endpoint_handler.get_full_url("store1", "/api/public/infra/v1/basestations")
+        headers = endpoint_handler.get_headers("store1")
+        response = requests.get(url, headers=headers)
+    else:
+        response = requests.get(
+            f"https://{store}.pcm.pricer-plaza.com/api/public/infra/v1/basestations",
+            headers={
+                "accept": "*/*",
+                "Authorization": f"Bearer {auth_token}",
+                "Content-Type": "application/json"
+            }
+        )
     return response.json()
 
 def get_link_departments(store, auth_token):
-    response = requests.get(
-        f"https://{store}.pcm.pricer-plaza.com/api/public/infra/v1/link-departments",
-        headers={
-            "accept": "*/*",
-            "Authorization": f"Bearer {auth_token}",
-            "Content-Type": "application/json"
-        }
-    )
+    is_onprem = not "." in store or ":" in store
+    
+    if is_onprem:
+        url = endpoint_handler.get_full_url("store1", "/api/public/infra/v1/link-departments")
+        headers = endpoint_handler.get_headers("store1")
+        response = requests.get(url, headers=headers)
+    else:
+        response = requests.get(
+            f"https://{store}.pcm.pricer-plaza.com/api/public/infra/v1/link-departments",
+            headers={
+                "accept": "*/*",
+                "Authorization": f"Bearer {auth_token}",
+                "Content-Type": "application/json"
+            }
+        )
     return response.json()
 
 def delete_basestation(store, auth_token, bs_name):
@@ -125,7 +139,6 @@ def delete_link_departments(store, auth_token, departments):
             write_log(f"{store} : Error deleting backoffice department: {str(e)}", "red")
 
 def add_basestation_to_store(bs_hardware_id, secret, store, store_data):
-    # Find the store UUID from store_data
     store_uuid = None
     for s in store_data:
         if s['externalId'] == store.split('.')[0]:
@@ -136,7 +149,6 @@ def add_basestation_to_store(bs_hardware_id, secret, store, store_data):
         write_log(f"Error: Could not find UUID for store {store}", "red")
         return False
     
-    # Extract domain from store string
     domain = store.split('.')[1]
     
     data = {
@@ -149,10 +161,10 @@ def add_basestation_to_store(bs_hardware_id, secret, store, store_data):
         response = requests.post(
             "https://serverurl.infraconfig.pricer-plaza.com/serverurl.php",
             data=data,
-            timeout=30,  # 30-second timeout
-            verify=True  # Ensure SSL certificate verification
+            timeout=30,
+            verify=True
         )
-        response.raise_for_status()  # Raise an exception for bad HTTP status
+        response.raise_for_status()
 
         if "Invalid HWID" in response.text:
             write_log(f"Error: Invalid hardware ID format for BS {bs_hardware_id}", "red")
@@ -241,7 +253,6 @@ def wait_for_basestation_status(store, auth_token, bs_hardware_id, target_status
 def migrate_basestations(source_bs, store2, auth_token2, bs_secrets):
     write_log(f"Starting migration for {len(source_bs)} basestations to {store2}", "cyan")
     
-    # First, wait for all basestations to be CONNECTED and accept them
     for bs in source_bs:
         write_log(f"Processing basestation {bs['hardwareId']}", "cyan")
 
@@ -272,9 +283,6 @@ def migrate_basestations(source_bs, store2, auth_token2, bs_secrets):
             write_log(f"{store2} : Error accepting basestation {bs['hardwareId']}: {str(e)}", "red")
             return False
     
-    # Rest of the function remains the same...
-    
-    # Then, wait for all basestations to become IRREADY
     for bs in source_bs:
         if not wait_for_basestation_status(store2, auth_token2, bs['hardwareId'], "IRREADY"):
             write_log(f"{store2} : Failed to ready basestation {bs['hardwareId']}", "red")
@@ -316,6 +324,7 @@ def restore_backoffice(store2, auth_token2, source_link_depts):
         current_backoffice = next((d for d in current_link_depts if d.get('isBackoffice')), None)
 
         if original_backoffice and current_backoffice and original_backoffice['id'] != current_backoffice['id']:
+
             bs_letter = original_backoffice['id'][0]
             restore_data = {
                 "alias": "",
@@ -394,10 +403,8 @@ def create_transmission_zone(store, auth_token, zone_name):
         return False
 
 def migrate_infrastructure(store1, store2, auth_token1, auth_token2, store_data=None):
-    # Get source infrastructure
     source_bs = get_basestations(store1, auth_token1)
     
-    # Verify there are basestations in the source store
     if not source_bs or len(source_bs) == 0:
         write_log(f"No basestations found in source store {store1}. MIGRATION ABORTED", "red")
         return False
@@ -405,17 +412,14 @@ def migrate_infrastructure(store1, store2, auth_token1, auth_token2, store_data=
     bs_summary = [{"hardwareId": bs["hardwareId"], "status": bs["detailedStatus"]} for bs in source_bs]
     write_log(f"Get BS Response: {json.dumps(bs_summary)}", "cyan")
     
-    # Verify basestations status
     bs_not_ready = [bs for bs in source_bs if bs['detailedStatus'] != "IRREADY"]
     if bs_not_ready:
         for bs in bs_not_ready:
             write_log(f"Basestation {bs['hardwareId']} is not ready, status: {bs['detailedStatus']}, MIGRATION ABORTED", "red")
         return False
 
-    # Check and create transmission zones if needed
     target_zones = get_transmission_zones(store2, auth_token2)
     
-    # Check the transmission zones for each basestation
     for bs in source_bs:
         zone_name = bs.get("transmissionZone")
         if zone_name and zone_name != "Main Store" and zone_name not in target_zones:
@@ -425,7 +429,6 @@ def migrate_infrastructure(store1, store2, auth_token1, auth_token2, store_data=
             else:
                 write_log(f"Failed to create transmission zone {zone_name}", "red")
 
-    # Collect transceiver positions first if geoloc exists
     trx_positions = {}
     from geoloc import check_geoloc_config
     if check_geoloc_config(store1, auth_token1):
@@ -444,7 +447,6 @@ def migrate_infrastructure(store1, store2, auth_token1, auth_token2, store_data=
                 response.raise_for_status()
                 transceivers = response.json()
                 
-                # Log the GET response
                 write_log(f"GET transceiver locations for BS {bs_name}", "cyan")
                 
                 for trx in transceivers:
@@ -462,7 +464,6 @@ def migrate_infrastructure(store1, store2, auth_token1, auth_token2, store_data=
     else:
         write_log("No geolocation found, no need to define Trx position", "yellow")
 
-    # First collect all basestation secrets
     bs_secrets = {}
     for bs in source_bs:
         secret = get_bs_secret(bs['hardwareId'])
@@ -473,10 +474,8 @@ def migrate_infrastructure(store1, store2, auth_token1, auth_token2, store_data=
     
     write_log("All basestation secrets collected successfully", "green")
     
-    # Then add each basestation to the store using collected secrets
     for bs in source_bs:
         if not add_basestation_to_store(bs['hardwareId'], bs_secrets[bs['hardwareId']], store2, store_data):
-            # Add retry mechanism - attempt up to 3 times
             retry_count = 0
             max_retries = 3
             success = False
@@ -484,7 +483,7 @@ def migrate_infrastructure(store1, store2, auth_token1, auth_token2, store_data=
             while retry_count < max_retries and not success:
                 retry_count += 1
                 write_log(f"Retrying to add basestation {bs['hardwareId']} (attempt {retry_count}/{max_retries})", "yellow")
-                time.sleep(10)  # 10 second delay between retries
+                time.sleep(10)
                 success = add_basestation_to_store(bs['hardwareId'], bs_secrets[bs['hardwareId']], store2, store_data)
                 if success:
                     write_log(f"Successfully added basestation {bs['hardwareId']} on retry {retry_count}", "green")
@@ -496,11 +495,9 @@ def migrate_infrastructure(store1, store2, auth_token1, auth_token2, store_data=
     
     write_log("All basestations pre-added successfully", "green")
     
-    # Get source link departments
     source_link_depts = get_link_departments(store1, auth_token1)
     write_log(f"Get LinkDepartment Response: {json.dumps(source_link_depts)}", "cyan")
 
-    # Clean up target store
     target_bs = get_basestations(store2, auth_token2)
     target_link_depts = get_link_departments(store2, auth_token2)
     
@@ -508,27 +505,22 @@ def migrate_infrastructure(store1, store2, auth_token1, auth_token2, store_data=
     for bs in target_bs:
         delete_basestation(store2, auth_token2, bs['name'])
 
-    # Clean up source store
     delete_link_departments(store1, auth_token1, source_link_depts)
     for bs in source_bs:
         delete_basestation(store1, auth_token1, bs['name'])
 
-    # Migrate basestations
     if not migrate_basestations(source_bs, store2, auth_token2, bs_secrets):
         write_log("Migration failed", "red")
         return False
 
-    # Recreate link departments
     if not recreate_linkdpt(store2, auth_token2, source_link_depts):
         write_log("Failed to recreate link departments", "red")
         return False
 
-    # Restore backoffice department
     if not restore_backoffice(store2, auth_token2, source_link_depts):
         write_log("Failed to restore backoffice dpt", "red")
         return False
 
-    # Final comparison check + migrate trx position if geoloc
     final_bs = get_basestations(store2, auth_token2)
     final_link_depts = get_link_departments(store2, auth_token2)
 
@@ -536,7 +528,6 @@ def migrate_infrastructure(store1, store2, auth_token1, auth_token2, store_data=
         if trx_positions:
             write_log("Applying transceiver positions", "cyan")
             for bs_name, positions in trx_positions.items():
-                # Get current transceiver data from the target
                 try:
                     response = requests.get(
                         f"https://{store2}.pcm.pricer-plaza.com/api/public/infra/v1/basestations/{bs_name}/transceivers",
@@ -548,7 +539,6 @@ def migrate_infrastructure(store1, store2, auth_token1, auth_token2, store_data=
                     response.raise_for_status()
                     target_transceivers = response.json()
                     
-                    # Apply positions for each transceiver matching hwPortNo
                     for trx in target_transceivers:
                         if 'address' in trx and 'hwPortNo' in trx['address']:
                             port = trx['address']['hwPortNo']
