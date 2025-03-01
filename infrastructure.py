@@ -30,12 +30,24 @@ def get_bs_secret(hardware_id, bs_list_file="DuplicateInfra_BS&secret_list.txt")
     try:
         with open(bs_list_file, 'r') as f:
             for line in f:
-                parts = line.strip().split(';')
-                for bs_secret in parts[1:]:
-                    bs_id, secret = bs_secret.split('/')
-                    if bs_id.strip() == hardware_id.strip():
-                        write_log(f"Found secret for basestation {hardware_id}", "green")
-                        return secret.strip()
+                line = line.strip()
+                if not line:
+                    continue
+                    
+                parts = line.split(';')
+                
+                # Check all parts including the first one
+                for part in parts:
+                    # Check if this part contains a hardware ID/secret pair
+                    if '/' in part:
+                        try:
+                            bs_id, secret = part.split('/')
+                            if bs_id.strip() == hardware_id.strip():
+                                write_log(f"Found secret for basestation {hardware_id}", "green")
+                                return secret.strip()
+                        except ValueError:
+                            # Invalid format, continue to next part
+                            continue
     except Exception as e:
         write_log(f"Error reading secret file: {str(e)}", "red")
 
@@ -385,7 +397,7 @@ def migrate_infrastructure(store1, store2, auth_token1, auth_token2, store_data=
     # Get source infrastructure
     source_bs = get_basestations(store1, auth_token1)
     
-    # NEW CHECK: Verify there are basestations in the source store
+    # Verify there are basestations in the source store
     if not source_bs or len(source_bs) == 0:
         write_log(f"No basestations found in source store {store1}. MIGRATION ABORTED", "red")
         return False
@@ -450,15 +462,20 @@ def migrate_infrastructure(store1, store2, auth_token1, auth_token2, store_data=
     else:
         write_log("No geolocation found, no need to define Trx position", "yellow")
 
-    # Get and verify secrets + add bs
+    # First collect all basestation secrets
     bs_secrets = {}
     for bs in source_bs:
         secret = get_bs_secret(bs['hardwareId'])
         if not secret:
             write_log(f"Could not get secret for basestation {bs['hardwareId']}, MIGRATION ABORTED", "red")
             return False
-            
-        if not add_basestation_to_store(bs['hardwareId'], secret, store2, store_data):
+        bs_secrets[bs['hardwareId']] = secret
+    
+    write_log("All basestation secrets collected successfully", "green")
+    
+    # Then add each basestation to the store using collected secrets
+    for bs in source_bs:
+        if not add_basestation_to_store(bs['hardwareId'], bs_secrets[bs['hardwareId']], store2, store_data):
             # Add retry mechanism - attempt up to 3 times
             retry_count = 0
             max_retries = 3
@@ -468,7 +485,7 @@ def migrate_infrastructure(store1, store2, auth_token1, auth_token2, store_data=
                 retry_count += 1
                 write_log(f"Retrying to add basestation {bs['hardwareId']} (attempt {retry_count}/{max_retries})", "yellow")
                 time.sleep(10)  # 10 second delay between retries
-                success = add_basestation_to_store(bs['hardwareId'], secret, store2, store_data)
+                success = add_basestation_to_store(bs['hardwareId'], bs_secrets[bs['hardwareId']], store2, store_data)
                 if success:
                     write_log(f"Successfully added basestation {bs['hardwareId']} on retry {retry_count}", "green")
                     break
@@ -476,10 +493,8 @@ def migrate_infrastructure(store1, store2, auth_token1, auth_token2, store_data=
             if not success:
                 write_log(f"Failed to pre-add basestation {bs['hardwareId']} after {max_retries} attempts, MIGRATION ABORTED", "red")
                 return False
-            
-        bs_secrets[bs['hardwareId']] = secret
-        
-    write_log("All basestation secrets verified and pre-added successfully", "green")
+    
+    write_log("All basestations pre-added successfully", "green")
     
     # Get source link departments
     source_link_depts = get_link_departments(store1, auth_token1)

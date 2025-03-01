@@ -9,16 +9,12 @@ from selenium.webdriver.edge.service import Service as EdgeService
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException
 from common import write_log
 import threading
-import queue
 import requests
-from datetime import datetime
 import infrastructure
 import fonts
 import item_properties
@@ -144,23 +140,22 @@ def get_store_data(domain, auth_token):
 def fetch_store_data_concurrent(domain1, domain2, auth_token1, auth_token2):
     """Fetch store data for both domains concurrently using threads."""
     store_data = {'domain1': None, 'domain2': None}
+    threads = []
     
-    def fetch_domain1():
-        store_data['domain1'] = get_store_data(domain1, auth_token1)
-        
-    def fetch_domain2():
-        store_data['domain2'] = get_store_data(domain2, auth_token2)
+    def fetch_domain(domain, auth_token, key):
+        store_data[key] = get_store_data(domain, auth_token)
     
-    # Create and start threads
-    thread1 = threading.Thread(target=fetch_domain1)
-    thread2 = threading.Thread(target=fetch_domain2)
+    # Create threads with proper exception handling
+    threads.append(threading.Thread(target=fetch_domain, args=(domain1, auth_token1, 'domain1')))
+    threads.append(threading.Thread(target=fetch_domain, args=(domain2, auth_token2, 'domain2')))
     
-    thread1.start()
-    thread2.start()
+    # Start all threads
+    for thread in threads:
+        thread.start()
     
-    # Wait for both threads to complete
-    thread1.join()
-    thread2.join()
+    # Wait for all threads to complete
+    for thread in threads:
+        thread.join()
     
     return store_data
 
@@ -267,23 +262,19 @@ def get_auth_token_from_browser(domain1, domain2):
             
             if not debug_session_exists:
                 kill_browser_processes(browser_type)
-                if browser_type == "chrome":
-                    os.system(f'start chrome --profile-directory="Default" --remote-debugging-port={debug_port}')
-                else:  # edge
-                    os.system(f'start msedge --profile-directory="Default" --remote-debugging-port={debug_port}')
+                browser_cmd = 'chrome' if browser_type == "chrome" else 'msedge'
+                os.system(f'start {browser_cmd} --profile-directory="Default" --remote-debugging-port={debug_port}')
                 time.sleep(3)  # Wait for browser to start
             
             # Connect to the debug session
+            options = ChromeOptions() if browser_type == "chrome" else EdgeOptions()
+            options.add_experimental_option("debuggerAddress", f"localhost:{debug_port}")
+            
+            # Use appropriate service
             if browser_type == "chrome":
-                options = ChromeOptions()
-                options.add_experimental_option("debuggerAddress", f"localhost:{debug_port}")
-                # Use default cache settings without explicit cache_valid_range
                 service = ChromeService(ChromeDriverManager().install())
                 driver = webdriver.Chrome(service=service, options=options)
             else:  # edge
-                options = EdgeOptions()
-                options.add_experimental_option("debuggerAddress", f"localhost:{debug_port}")
-                # Use default cache settings without explicit cache_valid_range
                 service = EdgeService(EdgeChromiumDriverManager().install())
                 driver = webdriver.Edge(service=service, options=options)
                 
@@ -320,11 +311,6 @@ def get_auth_token_from_browser(domain1, domain2):
         write_log(f"Unexpected error in browser token retrieval: {e}", "red")
         return None, None, driver
 
-def get_auth_token(domain, store):
-    """Deprecated function, kept for backward compatibility."""
-    write_log(f"Enter auth token for {store} :", "cyan")
-    return input("Auth Token> ")
-
 def parse_feature_input(feature_input):
     """Parse feature input that may contain ranges and/or individual selections."""
     if feature_input.lower() == 'a':
@@ -359,12 +345,16 @@ def main():
             write_log("Only Plaza to Plaza migration is currently supported", "red")
             continue
 
-        #store1 = input("Enter source store1_ID.domain1 (e.g. 1017.plus): ")
-        #store2 = input("Enter target store2_ID.domain2 (e.g. 6101.plus-v2): ")
-        store2 = "demo.ps"
-        store1 = "11111.plusa"
+        store1 = input("Enter source store1_ID.domain1 (e.g. 1017.plus): ")
+        store2 = input("Enter target store2_ID.domain2 (e.g. 6101.plus-v2): ")
+        #store2 = "demo.ps"
+        #store1 = "11111.plusa"
 
-        domain1, domain2 = store1.split('.')[1], store2.split('.')[1]
+        try:
+            domain1, domain2 = store1.split('.')[1], store2.split('.')[1]
+        except IndexError:
+            write_log("Invalid store format. Please use format storeID.domain", "red")
+            continue
 
         # Run domain and store checks concurrently
         write_log("Checking domain and store availability...", "cyan")
